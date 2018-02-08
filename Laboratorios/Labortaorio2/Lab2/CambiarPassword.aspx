@@ -9,6 +9,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:Label ID="Label1" runat="server" Font-Size="30pt" style="top: 29px; left: 486px; position: absolute; height: 56px; width: 372px" Text="Cambiar Password"></asp:Label>
         <div>
         </div>
     </form>
