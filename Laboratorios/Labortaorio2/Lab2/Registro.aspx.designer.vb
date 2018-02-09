@@ -23,139 +23,31 @@ Partial Public Class Registro
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
     
     '''<summary>
-    '''Control Label1.
+    '''Control t_nombre.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents t_nombre As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control lnombre.
+    '''Control req_nombre.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lnombre As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents req_nombre As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
-    '''Control lapel.
+    '''Control t_apellidos.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lapel As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''Control lmail.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lmail As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''Control lpass.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lpass As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''Control lvalpass.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lvalpass As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''Control lrol.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lrol As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''Control l_rol.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents l_rol As Global.System.Web.UI.WebControls.RadioButtonList
-    
-    '''<summary>
-    '''Control l_registrar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents l_registrar As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''Control l_nombre.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents l_nombre As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control l_apel.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents l_apel As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control l_email.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents l_email As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control l_pass.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents l_pass As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control l_vpass.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents l_vpass As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control req_name.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents req_name As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents t_apellidos As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''Control req_apel.
@@ -167,6 +59,15 @@ Partial Public Class Registro
     Protected WithEvents req_apel As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
+    '''Control t_email.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents t_email As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
     '''Control req_email.
     '''</summary>
     '''<remarks>
@@ -174,33 +75,6 @@ Partial Public Class Registro
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents req_email As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
-    '''<summary>
-    '''Control req_pass.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents req_pass As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
-    '''<summary>
-    '''Control req_vpass.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents req_vpass As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
-    '''<summary>
-    '''Control req_rol.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents req_rol As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
     '''Control reg_email.
@@ -212,6 +86,42 @@ Partial Public Class Registro
     Protected WithEvents reg_email As Global.System.Web.UI.WebControls.RegularExpressionValidator
     
     '''<summary>
+    '''Control t_pass.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents t_pass As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control req_pass.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents req_pass As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''Control t_rpass.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents t_rpass As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control req_rpass.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents req_rpass As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
     '''Control comp_pass.
     '''</summary>
     '''<remarks>
@@ -219,4 +129,31 @@ Partial Public Class Registro
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents comp_pass As Global.System.Web.UI.WebControls.CompareValidator
+    
+    '''<summary>
+    '''Control rb_rol.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents rb_rol As Global.System.Web.UI.WebControls.RadioButtonList
+    
+    '''<summary>
+    '''Control req_rol.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents req_rol As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''Control btn_registro.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_registro As Global.System.Web.UI.WebControls.Button
 End Class

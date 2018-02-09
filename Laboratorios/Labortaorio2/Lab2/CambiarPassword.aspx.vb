@@ -5,4 +5,7 @@
 
     End Sub
 
+    Protected Sub l_solicitar_Click(sender As Object, e As EventArgs) Handles l_solicitar.Click
+        Server.Transfer("CambiarPassword2.aspx", True)
+    End Sub
 End Class

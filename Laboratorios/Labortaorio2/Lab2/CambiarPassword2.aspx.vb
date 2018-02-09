@@ -5,4 +5,7 @@
 
     End Sub
 
+    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles l_cambiar.Click
+        Server.Transfer("Inicio.aspx", True)
+    End Sub
 End Class

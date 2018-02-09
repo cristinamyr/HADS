@@ -41,24 +41,6 @@ Partial Public Class FormularioWeb
     Protected WithEvents l_email As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control lpass.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lpass As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''Control b_inic.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents b_inic As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
     '''Control t_email.
     '''</summary>
     '''<remarks>
@@ -66,24 +48,6 @@ Partial Public Class FormularioWeb
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents t_email As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control hl_pass.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents hl_pass As Global.System.Web.UI.WebControls.HyperLink
-    
-    '''<summary>
-    '''Control hp_registrar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents hp_registrar As Global.System.Web.UI.WebControls.HyperLink
     
     '''<summary>
     '''Control req_email.
@@ -95,13 +59,13 @@ Partial Public Class FormularioWeb
     Protected WithEvents req_email As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
-    '''Control RegularExpressionValidator1.
+    '''Control reg_email.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RegularExpressionValidator1 As Global.System.Web.UI.WebControls.RegularExpressionValidator
+    Protected WithEvents reg_email As Global.System.Web.UI.WebControls.RegularExpressionValidator
     
     '''<summary>
     '''Control t_pass.
@@ -113,11 +77,38 @@ Partial Public Class FormularioWeb
     Protected WithEvents t_pass As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control RequiredFieldValidator2.
+    '''Control req_pass.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents RequiredFieldValidator2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents req_pass As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''Control b_inciar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents b_inciar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control h_registro.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents h_registro As Global.System.Web.UI.WebControls.HyperLink
+    
+    '''<summary>
+    '''Control h_pass.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents h_pass As Global.System.Web.UI.WebControls.HyperLink
 End Class

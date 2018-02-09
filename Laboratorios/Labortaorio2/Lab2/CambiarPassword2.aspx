@@ -5,27 +5,78 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>Cambiar contraseña</title>
+    <style type="text/css">
+        .auto-style1 {
+            height: 547px;
+        }
+        .auto-style2 {
+            font-size: xx-large;
+            text-align: center;
+        }
+        .auto-style3 {
+            text-align: center;
+        }
+        .auto-style4 {
+            text-align: right;
+            width: 843px;
+        }
+        .auto-style5 {
+            width: 843px;
+        }
+    </style>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-    
-    </div>
-        <asp:Label ID="Label1" runat="server" style="top: 147px; left: 340px; position: absolute; height: 22px; width: 219px" Text="Código de Confirmación:"></asp:Label>
-        <asp:TextBox ID="TextBox1" runat="server" style="top: 141px; left: 578px; position: absolute; height: 25px; width: 168px"></asp:TextBox>
-        <asp:Label ID="Label2" runat="server" style="top: 208px; left: 344px; position: absolute; height: 22px; width: 160px" Text="Nueva contraseña:"></asp:Label>
-        <asp:Label ID="Label3" runat="server" style="top: 264px; left: 342px; position: absolute; height: 22px; width: 239px" Text="Confirmar nueva contraseña:"></asp:Label>
-        <asp:TextBox ID="TextBox2" runat="server" style="top: 206px; left: 525px; position: absolute; height: 25px; width: 168px"></asp:TextBox>
-        <asp:TextBox ID="TextBox3" runat="server" style="top: 259px; left: 608px; position: absolute; height: 25px; width: 168px"></asp:TextBox>
-        <asp:Button ID="Button1" runat="server" style="top: 337px; left: 556px; position: absolute; height: 29px; width: 103px" Text="Modificar" />
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="*" ForeColor="Red" style="top: 146px; left: 762px; position: absolute; height: 22px; width: 18px; margin-top: 0px"></asp:RequiredFieldValidator>
-        <p>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="*" ForeColor="Red" style="top: 209px; left: 709px; position: absolute; height: 22px; width: 17px"></asp:RequiredFieldValidator>
-        </p>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox3" ErrorMessage="*" ForeColor="Red" style="top: 264px; left: 798px; position: absolute; height: 22px; width: 19px"></asp:RequiredFieldValidator>
-        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="Formato erróneo" style="top: 145px; left: 785px; position: absolute; height: 22px; width: 225px" ValidationExpression="[0-9][0-9][0-9][0-9][0-9][0-9]"></asp:RegularExpressionValidator>
-        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBox2" ControlToValidate="TextBox3" ErrorMessage="Las contraseñas no coinciden" style="top: 259px; left: 826px; position: absolute; height: 22px; width: 147px"></asp:CompareValidator>
+    <form id="form1" runat="server" class="auto-style1">
+        <table style="width:100%;">
+            <tr>
+                <td class="auto-style5">&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style2" colspan="2"><strong>Confirmación del código </strong></td>
+            </tr>
+            <tr>
+                <td class="auto-style5">&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style4">Código de confirmación:</td>
+                <td>
+                    <asp:TextBox ID="t_codigo" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="req_codigo" runat="server" ControlToValidate="t_codigo" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="reg_codigo" runat="server" ControlToValidate="t_codigo" ErrorMessage="Formato erróneo" ValidationExpression="[0-9][0-9][0-9][0-9][0-9][0-9]"></asp:RegularExpressionValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style4">Nueva contraseña:</td>
+                <td>
+                    <asp:TextBox ID="t_pass" runat="server" TextMode="Password"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="req_pass" runat="server" ControlToValidate="t_pass" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style4">Repetir contraseña:</td>
+                <td>
+                    <asp:TextBox ID="t_rpass" runat="server" TextMode="Password"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="req_rpass" runat="server" ControlToValidate="t_rpass" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:CompareValidator ID="comp_rpass" runat="server" ControlToCompare="t_pass" ControlToValidate="t_rpass" ErrorMessage="Las contraseñas no coinciden"></asp:CompareValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style3" colspan="2">
+                    <asp:Button ID="l_cambiar" runat="server" Text="Cambiar contraseña" />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style5">&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style5">&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
     </form>
 </body>
 </html>

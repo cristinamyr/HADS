@@ -94,7 +94,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CambiarPassword.aspx" />
-    <Content Include="CambiarPassword2.aspx" />
+    <Content Include="CambiarPassword2.aspx">
+      <CustomToolNamespace>Cambiar Contraseña</CustomToolNamespace>
+    </Content>
     <Content Include="Confirmar.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="Registro.aspx" />

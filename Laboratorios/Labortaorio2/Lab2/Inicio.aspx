@@ -5,26 +5,118 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>Inicio</title>
     <style type="text/css">
         #form1 {
-            height: 763px;
+            height: 893px;
+        }
+        .auto-style2 {
+            width: 795px;
+        }
+        .auto-style6 {
+            width: 795px;
+            text-align: right;
+            height: 32px;
+        }
+        .auto-style7 {
+            text-align: center;
+        }
+        .auto-style9 {
+            text-align: center;
+            height: 41px;
+        }
+        .auto-style10 {
+            margin-right: 0px;
+        }
+        .auto-style11 {
+            height: 33px;
+        }
+        .auto-style12 {
+            width: 818px;
+            height: 31px;
+        }
+        .auto-style14 {
+            width: 795px;
+            height: 31px;
+        }
+        .auto-style15 {
+            width: 795px;
+            height: 33px;
+        }
+        .auto-style16 {
+            height: 32px;
         }
     </style>
 </head>
 <body style="height: 899px">
-    <form id="form1" runat="server">
-        <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="20pt" style="top: 77px; left: 589px; position: absolute; height: 27px; width: 523px" Text="Formulario de Inicio de sesión"></asp:Label>
-        <asp:Label ID="l_email" runat="server" style="top: 175px; left: 705px; position: absolute; height: 27px; width: 69px" Text="e-mail:"></asp:Label>
-        <asp:Label ID="lpass" runat="server" style="top: 206px; left: 661px; position: absolute; height: 27px; width: 116px" Text="contraseña: "></asp:Label>
-        <asp:Button ID="b_inic" runat="server" style="top: 265px; left: 712px; position: absolute; height: 35px; width: 172px; bottom: 665px" Text="Iniciar sesión" />
-        <asp:TextBox ID="t_email" runat="server" style="top: 171px; left: 784px; position: absolute; height: 29px; width: 188px"></asp:TextBox>
-        <asp:HyperLink ID="hl_pass" runat="server" NavigateUrl="~/CambiarPassword.aspx" style="top: 345px; left: 662px; position: absolute; height: 27px; width: 266px; bottom: 593px;">¿Se te olvidó la contraseña?</asp:HyperLink>
-        <asp:HyperLink ID="hp_registrar" runat="server" NavigateUrl="~/Registro.aspx" style="top: 384px; left: 746px; position: absolute; height: 27px; width: 107px">Registrarse</asp:HyperLink>
-        <asp:RequiredFieldValidator ID="req_email" runat="server" ControlToValidate="t_email" ErrorMessage="*" style="top: 174px; left: 990px; position: absolute; height: 27px; width: 225px; bottom: 764px"></asp:RequiredFieldValidator>
-        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="t_email" ErrorMessage="Formato erróneo" style="top: 173px; left: 1009px; position: absolute; height: 27px; width: 270px"></asp:RegularExpressionValidator>
-        <asp:TextBox ID="t_pass" runat="server" style="top: 208px; left: 784px; position: absolute; height: 29px; width: 188px" TextMode="Password"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="t_pass" ErrorMessage="*" style="top: 220px; left: 991px; position: absolute; height: 27px; width: 225px"></asp:RequiredFieldValidator>
+    <form id="form1" runat="server" class="auto-style10" title="Inicio">
+        <table style="width:100%;">
+            <tr>
+                <td class="auto-style2">&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center">
+                    <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="30pt" style="text-align: center" Text="Formulario de inicio de sesión"></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style15" style="text-align: right">&nbsp;</td>
+                <td class="auto-style11">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style15" style="text-align: right">
+                    <asp:Label ID="l_email" runat="server" Text="email:"></asp:Label>
+                </td>
+                <td class="auto-style11">
+                    <asp:TextBox ID="t_email" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="req_email" runat="server" ControlToValidate="t_email" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="reg_email" runat="server" ControlToValidate="t_email" ErrorMessage="Formato erróneo" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style6">password:</td>
+                <td class="auto-style16">
+                    <asp:TextBox ID="t_pass" runat="server" TextMode="Password"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="req_pass" runat="server" ControlToValidate="t_pass" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style7" colspan="2">
+                    <asp:Button ID="b_inciar" runat="server" Text="Iniciar sesión" />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style2">&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style9" colspan="2">
+                    <asp:HyperLink ID="h_registro" runat="server" NavigateUrl="~/Registro.aspx">Registrarse</asp:HyperLink>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style7" colspan="2">
+                    <asp:HyperLink ID="h_pass" runat="server" NavigateUrl="~/CambiarPassword.aspx">¿Olvidó su contraseña?</asp:HyperLink>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style2">&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style2">&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style2">&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style14"></td>
+                <td class="auto-style12"></td>
+            </tr>
+        </table>
     </form>
 </body>
 </html>

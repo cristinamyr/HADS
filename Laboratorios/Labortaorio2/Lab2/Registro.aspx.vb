@@ -5,7 +5,7 @@
 
     End Sub
 
-    Protected Sub l_registrar_Click(sender As Object, e As EventArgs) Handles l_registrar.Click
-
+    Protected Sub btn_registro_Click(sender As Object, e As EventArgs) Handles btn_registro.Click
+        Server.Transfer("Inicio.aspx", True)
     End Sub
 End Class
