@@ -8,18 +8,18 @@
     <title></title>
     <style type="text/css">
         #form1 {
-            height: 671px;
+            height: 763px;
         }
     </style>
 </head>
 <body style="height: 899px">
     <form id="form1" runat="server">
         <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="20pt" style="top: 77px; left: 589px; position: absolute; height: 27px; width: 523px" Text="Formulario de Inicio de sesión"></asp:Label>
-        <asp:Label ID="Label3" runat="server" style="top: 175px; left: 705px; position: absolute; height: 27px; width: 69px" Text="e-mail:"></asp:Label>
-        <asp:Label ID="Label4" runat="server" style="top: 206px; left: 661px; position: absolute; height: 27px; width: 116px" Text="contraseña: "></asp:Label>
+        <asp:Label ID="l_email" runat="server" style="top: 175px; left: 705px; position: absolute; height: 27px; width: 69px" Text="e-mail:"></asp:Label>
+        <asp:Label ID="lpass" runat="server" style="top: 206px; left: 661px; position: absolute; height: 27px; width: 116px" Text="contraseña: "></asp:Label>
         <asp:Button ID="b_inic" runat="server" style="top: 265px; left: 712px; position: absolute; height: 35px; width: 172px; bottom: 665px" Text="Iniciar sesión" />
         <asp:TextBox ID="t_email" runat="server" style="top: 171px; left: 784px; position: absolute; height: 29px; width: 188px"></asp:TextBox>
-        <asp:HyperLink ID="hl_pass" runat="server" NavigateUrl="~/CambiarPassword.aspx" style="top: 345px; left: 662px; position: absolute; height: 27px; width: 266px">¿Se te olvidó la contraseña?</asp:HyperLink>
+        <asp:HyperLink ID="hl_pass" runat="server" NavigateUrl="~/CambiarPassword.aspx" style="top: 345px; left: 662px; position: absolute; height: 27px; width: 266px; bottom: 593px;">¿Se te olvidó la contraseña?</asp:HyperLink>
         <asp:HyperLink ID="hp_registrar" runat="server" NavigateUrl="~/Registro.aspx" style="top: 384px; left: 746px; position: absolute; height: 27px; width: 107px">Registrarse</asp:HyperLink>
         <asp:RequiredFieldValidator ID="req_email" runat="server" ControlToValidate="t_email" ErrorMessage="*" style="top: 174px; left: 990px; position: absolute; height: 27px; width: 225px; bottom: 764px"></asp:RequiredFieldValidator>
         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="t_email" ErrorMessage="Formato erróneo" style="top: 173px; left: 1009px; position: absolute; height: 27px; width: 270px"></asp:RegularExpressionValidator>

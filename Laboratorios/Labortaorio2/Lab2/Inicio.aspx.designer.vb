@@ -32,22 +32,22 @@ Partial Public Class FormularioWeb
     Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control Label3.
+    '''Control l_email.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents l_email As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control Label4.
+    '''Control lpass.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Label4 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lpass As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''Control b_inic.

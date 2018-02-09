@@ -5,4 +5,7 @@
 
     End Sub
 
+    Protected Sub l_registrar_Click(sender As Object, e As EventArgs) Handles l_registrar.Click
+
+    End Sub
 End Class
