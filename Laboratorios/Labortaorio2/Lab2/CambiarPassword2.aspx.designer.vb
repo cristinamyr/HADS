@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class CambiarPassword
+Partial Public Class CambiarPassword2
     
     '''<summary>
     '''Control form1.
@@ -32,6 +32,15 @@ Partial Public Class CambiarPassword
     Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
+    '''Control TextBox1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
     '''Control Label2.
     '''</summary>
     '''<remarks>
@@ -41,13 +50,31 @@ Partial Public Class CambiarPassword
     Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control TextBox1.
+    '''Control Label3.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control TextBox2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents TextBox2 As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control TextBox3.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents TextBox3 As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''Control Button1.
@@ -68,6 +95,24 @@ Partial Public Class CambiarPassword
     Protected WithEvents RequiredFieldValidator1 As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
+    '''Control RequiredFieldValidator2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents RequiredFieldValidator2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''Control RequiredFieldValidator3.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents RequiredFieldValidator3 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
     '''Control RegularExpressionValidator1.
     '''</summary>
     '''<remarks>
@@ -75,4 +120,13 @@ Partial Public Class CambiarPassword
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents RegularExpressionValidator1 As Global.System.Web.UI.WebControls.RegularExpressionValidator
+    
+    '''<summary>
+    '''Control CompareValidator1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents CompareValidator1 As Global.System.Web.UI.WebControls.CompareValidator
 End Class
