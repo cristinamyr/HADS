@@ -95,6 +95,15 @@ Partial Public Class FormularioWeb
     Protected WithEvents b_inciar As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
+    '''Control l_iniciarSesion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents l_iniciarSesion As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''Control h_registro.
     '''</summary>
     '''<remarks>
