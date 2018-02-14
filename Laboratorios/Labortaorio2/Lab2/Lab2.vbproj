@@ -68,6 +68,10 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AccesoBD\AccesoBD.vbproj">
+      <Project>{1b2a64d8-28c6-48d4-8c4c-9cfcb47b8340}</Project>
+      <Name>AccesoBD</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -129,7 +133,7 @@
     </Compile>
     <Compile Include="Inicio.aspx.vb">
       <DependentUpon>Inicio.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

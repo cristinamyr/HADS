@@ -91,8 +91,14 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style4">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style2" colspan="2">
+                        <asp:Label ID="l_insert" runat="server" ForeColor="Red" Text="   "></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2" colspan="2">
+                        <asp:Label ID="l_conexion" runat="server" Text="        "></asp:Label>
+                    </td>
                 </tr>
             </table>
         </div>

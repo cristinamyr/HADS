@@ -120,4 +120,13 @@ Partial Public Class FormularioWeb
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents h_pass As Global.System.Web.UI.WebControls.HyperLink
+    
+    '''<summary>
+    '''Control l_conexion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents l_conexion As Global.System.Web.UI.WebControls.Label
 End Class
