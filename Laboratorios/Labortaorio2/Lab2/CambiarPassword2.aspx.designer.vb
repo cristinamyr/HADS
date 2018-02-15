@@ -111,4 +111,13 @@ Partial Public Class CambiarPassword2
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents l_message As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control p_reenviar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents p_reenviar As Global.System.Web.UI.WebControls.Button
 End Class

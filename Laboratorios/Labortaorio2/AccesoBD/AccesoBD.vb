@@ -51,5 +51,9 @@
         Return comando.ExecuteScalar()
     End Function
 
+    Public Shared Function cambiarPass(ByVal email As String, ByVal codigo As Integer) As Integer
+        Return 0
+    End Function
+
 End Class
 

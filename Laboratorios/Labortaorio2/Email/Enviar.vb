@@ -2,14 +2,14 @@
 Imports System.Net.NetworkCredential
 
 Public Class Enviar
-    Public Function enviarEmail(ByVal emaildestino As String, ByVal codigo As Integer) As Boolean
+    Public Function enviarEmail(ByVal emaildestino As String, ByVal mensaje As String) As Boolean
         Try
             'Direccion de origen 
-            Dim from_address As New MailAddress("XXXXXXX", "HADS10")
+            Dim from_address As New MailAddress("agonzalez379@ikasle.ehu.eus", "HADS10")
             'Direccion de destino 
             Dim to_address As New MailAddress(emaildestino)
             'Password de la cuenta  
-            Dim from_pass As String = "XXXXXX"
+            Dim from_pass As String = "Arkotxa7"
             'Objeto para el cliente smtp
             Dim smtp As New SmtpClient
             'Host en este caso el servidor de gmail
@@ -27,7 +27,7 @@ Public Class Enviar
             'Añadimos el asunto 
             message.Subject = "Código de confirmación de cambio de contraseña"
             'Concatenamos el cuerpo del mensaje a la plantilla 
-            message.Body = "<html><head></head><body>" + "El código de confirmación es el siguiente:" + codigo + "</body></html>"
+            message.Body = "<html><head></head><body>" & mensaje & "</body></html>"
             'Definimos el cuerpo como html para poder escojer mejor como lo mandamos  
             message.IsBodyHtml = True
             'Se envia el correo  
