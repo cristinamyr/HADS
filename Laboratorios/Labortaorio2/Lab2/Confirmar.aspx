@@ -36,7 +36,9 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style6" colspan="2">Su cuenta ha sido confirmada.</td>
+                    <td class="auto-style6" colspan="2">
+                        <asp:Label ID="l_conf" runat="server" Text="Su cuenta ha sido confirmada."></asp:Label>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style6" colspan="2">
@@ -48,15 +50,18 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style7" colspan="2">Ha habido un error a la hora de confirmar su cuenta.</td>
+                    <td class="auto-style7" colspan="2">
+                        <asp:Label ID="l_error" runat="server" Text="Ha habido un error a la hora de confirmar su cuenta."></asp:Label>
+                    </td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style6" colspan="2">
+                        <asp:Label ID="l_conexion" runat="server" Text="  "></asp:Label>
+                    </td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>

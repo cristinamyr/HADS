@@ -70,12 +70,21 @@
             </tr>
             <tr>
                 <td class="auto-style3" colspan="2">
-                    <asp:Label ID="l_message" runat="server" ForeColor="Red" Text="__"></asp:Label>
+                    <asp:Label ID="l_message" runat="server" ForeColor="Red" Text=" "></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style3" colspan="2">
                     <asp:Button ID="p_reenviar" runat="server" Text="Reenviar código." />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style3" colspan="2">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style3" colspan="2">
+                    <asp:Label ID="l_conexion" runat="server" Text="    "></asp:Label>
                 </td>
             </tr>
         </table>

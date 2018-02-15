@@ -51,7 +51,28 @@
         Return comando.ExecuteScalar()
     End Function
 
-    Public Shared Function cambiarPass(ByVal email As String, ByVal codigo As Integer) As Integer
+    Public Shared Function cambiarPass(ByVal email As String, ByVal pass As String) As String
+        Dim numRegs As Integer
+        If buscar(email) Then
+            Dim st = "Update Usuarios set pass = '" & pass & "' where email='" & email & "'"
+            comando = New SqlClient.SqlCommand(st, conexion)
+            Try
+                numRegs = comando.ExecuteNonQuery()
+            Catch ex As Exception
+                Return ex.Message
+            End Try
+            Return numRegs & "registros(s) modificado(s) en la BD"
+        Else
+            Return "Ese email no está en la BD."
+        End If
+    End Function
+
+    Public Shared Function confirmarCodigo(ByVal email As String, ByVal codigo As Integer) As Integer
+        'mirar que exista el email en la bd
+        'mirar que coincide el código de confirmación
+        'mirar que ese usuario no esté confirmado con anterioridad
+        '-->
+        'cambiar confirmado a 1
         Return 0
     End Function
 
