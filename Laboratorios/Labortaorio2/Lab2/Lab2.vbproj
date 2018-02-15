@@ -72,6 +72,10 @@
       <Project>{1b2a64d8-28c6-48d4-8c4c-9cfcb47b8340}</Project>
       <Name>AccesoBD</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Email\Email.vbproj">
+      <Project>{4209163e-dc97-4cbe-9409-20d1a29f6920}</Project>
+      <Name>Email</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />

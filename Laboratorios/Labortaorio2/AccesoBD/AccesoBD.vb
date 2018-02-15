@@ -22,10 +22,7 @@
         Return comando.ExecuteScalar()
     End Function
 
-    Public Shared Function insertar(ByVal nombre As String, ByVal apellidos As String, ByVal email As String, ByVal contrasena As String, ByVal rol As String) As Tuple(Of String, Integer)
-        Dim NumConf As Integer
-        Randomize()
-        NumConf = CLng(Rnd() * 9000000) + 1000000
+    Public Shared Function insertar(ByVal nombre As String, ByVal apellidos As String, ByVal email As String, ByVal contrasena As String, ByVal rol As String, ByVal NumConf As Integer) As Tuple(Of String, Integer)
         If (buscar(email) = 0) Then
             Dim st = "insert into Usuarios (email,nombre,apellidos,numconfir,confirmado,tipo,pass ) values ('" & email & "','" & nombre & "','" & apellidos & "','" & NumConf & "','" & 0 & "','" & rol & "','" & contrasena & "')"
             Dim numregs As Integer
