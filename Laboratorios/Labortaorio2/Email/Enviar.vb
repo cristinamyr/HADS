@@ -5,11 +5,11 @@ Public Class Enviar
     Public Function enviarEmail(ByVal emaildestino As String, ByVal codigo As Integer) As Boolean
         Try
             'Direccion de origen 
-            Dim from_address As New MailAddress("agonzalez379@ikasle.ehu.eus", "HADS10")
+            Dim from_address As New MailAddress("XXXXXXX", "HADS10")
             'Direccion de destino 
             Dim to_address As New MailAddress(emaildestino)
             'Password de la cuenta  
-            Dim from_pass As String = "Arkotxa7"
+            Dim from_pass As String = "XXXXXX"
             'Objeto para el cliente smtp
             Dim smtp As New SmtpClient
             'Host en este caso el servidor de gmail
