@@ -5,7 +5,10 @@
 
     End Sub
 
-    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles l_cambiar.Click
-        Response.Redirect("CambiarPassword2.aspx")
+    Protected Sub b_cambiar_Click(sender As Object, e As EventArgs) Handles b_cambiar.Click
+        'Response.Redirect("CambiarPassword2.aspx")
+        Dim numero = Request.QueryString("num")
+        Dim email = Request.QueryString("mail")
+
     End Sub
-End Class
+End Class '

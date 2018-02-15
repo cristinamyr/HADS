@@ -95,11 +95,20 @@ Partial Public Class CambiarPassword2
     Protected WithEvents comp_rpass As Global.System.Web.UI.WebControls.CompareValidator
     
     '''<summary>
-    '''Control l_cambiar.
+    '''Control b_cambiar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents l_cambiar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents b_cambiar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control l_message.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents l_message As Global.System.Web.UI.WebControls.Label
 End Class

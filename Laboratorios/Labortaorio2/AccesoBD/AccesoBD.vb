@@ -39,4 +39,17 @@
 
     End Function
 
+    Public Shared Function buscarRegistro(ByVal email As String, ByVal pass As String) As Integer
+        Dim st = "Select count(*) from Usuarios where email = '" & email & "' and pass = '" & pass & "'"
+        comando = New SqlClient.SqlCommand(st, conexion)
+        buscarRegistro = comando.ExecuteScalar()
+    End Function
+
+    Public Shared Function estaConfirmado(ByVal email As String) As Integer
+        Dim st = "Select count(*) from Usuarios where email = '" & email & "' and confirmado = '" & 1 & "'"
+        comando = New SqlClient.SqlCommand(st, conexion)
+        Return comando.ExecuteScalar()
+    End Function
+
 End Class
+
