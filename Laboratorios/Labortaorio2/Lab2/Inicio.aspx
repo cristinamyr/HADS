@@ -83,15 +83,13 @@
             </tr>
             <tr>
                 <td class="auto-style7" colspan="2">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="b_inciar" runat="server" Text="Iniciar sesión" />
-                &nbsp;
-                    <asp:Label ID="l_iniciarSesion" runat="server" ForeColor="Red" Text="Password/Usuario incorrectos"></asp:Label>
+                    &nbsp;<asp:Button ID="b_inciar" runat="server" Text="Iniciar sesión" />
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style7" colspan="2">&nbsp;&nbsp;
+                    <asp:Label ID="l_iniciarSesion" runat="server" ForeColor="Red" Text="      "></asp:Label>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style9" colspan="2">
