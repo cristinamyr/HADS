@@ -18,10 +18,12 @@ Public Class CambiarPassword
                 Dim mail As New Email.Enviar
                 Dim mensaje As String
                 Dim codigo As Integer
+                Dim asunto As String
                 Randomize()
                 codigo = CLng(Rnd() * 900000) + 100000
+                asunto = "Código de confirmación de cambio de contraseña"
                 mensaje = "El código de confirmación es el siguiente: " & codigo
-                mail.enviarEmail(l_email.Text, mensaje)
+                mail.enviarEmail(l_email.Text, asunto, mensaje)
                 Response.Redirect("CambiarPassword2.aspx?mail=" & l_email.Text & "&num=" & codigo)
             Else
                 l_message.Text = "No has confirmado tu cuenta"

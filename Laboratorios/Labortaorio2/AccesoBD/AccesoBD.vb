@@ -67,12 +67,34 @@
         End If
     End Function
 
+    Public Shared Function cumpleCaracteristicas(ByVal email As String, ByVal codigo As Integer) As Integer
+        Dim st = "Select count(*) from Usuarios where email = '" & email & "'and numconfir = '" & codigo & "' and confirmado = '" & 0 & "'"
+        comando = New SqlClient.SqlCommand(st, conexion)
+        Return comando.ExecuteScalar()
+    End Function
+
+    Public Shared Function confirmarUsuario(ByVal email As String) As Integer
+        Dim numRegs As Integer
+        If buscar(email) Then
+            Dim st = "Update Usuarios set confirmado = '" & 1 & "' where email='" & email & "'"
+            comando = New SqlClient.SqlCommand(st, conexion)
+            Try
+                numRegs = comando.ExecuteNonQuery()
+            Catch ex As Exception
+                Return 1
+            End Try
+            Return 1
+        Else
+            Return 0
+        End If
+        Return 0
+    End Function
+
+
     Public Shared Function confirmarCodigo(ByVal email As String, ByVal codigo As Integer) As Integer
-        'mirar que exista el email en la bd
-        'mirar que coincide el código de confirmación
-        'mirar que ese usuario no esté confirmado con anterioridad
-        '-->
-        'cambiar confirmado a 1
+        If cumpleCaracteristicas(email, codigo) Then
+            Return confirmarUsuario(email)
+        End If
         Return 0
     End Function
 

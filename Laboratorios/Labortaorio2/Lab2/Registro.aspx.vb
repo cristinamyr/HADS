@@ -6,6 +6,7 @@ Public Class Registro
         Dim result As String
         result = conectar()
         l_conexion.Text = result
+        h_enlace.Visible = False
     End Sub
 
     Protected Sub btn_registro_Click(sender As Object, e As EventArgs) Handles btn_registro.Click
@@ -19,6 +20,13 @@ Public Class Registro
         Else
             resultado = insertar(t_nombre.Text, t_apellidos.Text, t_email.Text, t_pass.Text, rb_rol.SelectedValue, NumConf)
             l_insert.Text = resultado.Item1
+            Dim email As String
+            Dim mensaje As String
+            Dim asunto As String
+            email = t_email.Text
+            mensaje = ""
+            asunto = "Confirmación de registro"
+            mail.enviarEmail(t_email.Text, asunto, mensaje)
         End If
 
     End Sub

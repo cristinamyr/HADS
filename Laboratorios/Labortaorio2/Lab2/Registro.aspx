@@ -93,11 +93,12 @@
                 <tr>
                     <td class="auto-style2" colspan="2">
                         <asp:Label ID="l_insert" runat="server" Text=" "></asp:Label>
+                        <asp:Label ID="l_conexion" runat="server" Text=" "></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style2" colspan="2">
-                        <asp:Label ID="l_conexion" runat="server" Text="     "></asp:Label>
+                        <asp:HyperLink ID="h_enlace" runat="server">Validar.</asp:HyperLink>
                     </td>
                 </tr>
             </table>

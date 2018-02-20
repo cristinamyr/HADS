@@ -174,4 +174,13 @@ Partial Public Class Registro
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents l_conexion As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control h_enlace.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents h_enlace As Global.System.Web.UI.WebControls.HyperLink
 End Class
