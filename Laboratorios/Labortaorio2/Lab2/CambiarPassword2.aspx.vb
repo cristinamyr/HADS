@@ -30,8 +30,9 @@ Public Class CambiarPassword2
 
     Protected Sub p_reenviar_Click(sender As Object, e As EventArgs) Handles p_reenviar.Click
         Dim mail As New Email.Enviar
+        Dim asunto As String = "Código de confirmación de cambio de contraseña"
         Dim mensaje As String = "El código de confirmación es el siguiente: " & numero
-        mail.enviarEmail(email, mensaje)
+        mail.enviarEmail(email, asunto, mensaje)
         l_message.Text = "Código reenviado"
     End Sub
 

@@ -81,13 +81,12 @@
             Try
                 numRegs = comando.ExecuteNonQuery()
             Catch ex As Exception
-                Return 1
+                Return 0
             End Try
             Return 1
         Else
             Return 0
         End If
-        Return 0
     End Function
 
 
@@ -97,6 +96,5 @@
         End If
         Return 0
     End Function
-
 End Class
 

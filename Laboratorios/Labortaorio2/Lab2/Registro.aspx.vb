@@ -24,9 +24,11 @@ Public Class Registro
             Dim mensaje As String
             Dim asunto As String
             email = t_email.Text
-            mensaje = ""
+            mensaje = "Para confirmar la cuenta pulsa en el siguiente <a href='http://localhost:54472/Confirmar.aspx?mail=" & email & "&num=" & NumConf & "'> enlace. </a>"
             asunto = "Confirmación de registro"
             mail.enviarEmail(t_email.Text, asunto, mensaje)
+            h_enlace.Visible = True
+            h_enlace.NavigateUrl = "http://localhost:54472/Confirmar.aspx?mail=" & email & "&num=" & NumConf
         End If
 
     End Sub
