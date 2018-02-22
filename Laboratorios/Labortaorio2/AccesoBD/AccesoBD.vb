@@ -96,5 +96,11 @@
         End If
         Return 0
     End Function
+
+    Public Shared Function obtenerCodigo(ByVal email As String) As Integer
+        Dim st = "Select numconfir from Usuarios where email = '" & email & "'"
+        comando = New SqlClient.SqlCommand(st, conexion)
+        Return comando.ExecuteScalar()
+    End Function
 End Class
 

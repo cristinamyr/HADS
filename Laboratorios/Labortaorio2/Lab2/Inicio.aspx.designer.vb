@@ -77,15 +77,6 @@ Partial Public Class FormularioWeb
     Protected WithEvents t_pass As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control req_pass.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents req_pass As Global.System.Web.UI.WebControls.RequiredFieldValidator
-    
-    '''<summary>
     '''Control b_inciar.
     '''</summary>
     '''<remarks>
@@ -102,6 +93,15 @@ Partial Public Class FormularioWeb
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents l_iniciarSesion As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control l_button.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents l_button As Global.System.Web.UI.WebControls.LinkButton
     
     '''<summary>
     '''Control h_registro.

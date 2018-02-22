@@ -2,7 +2,7 @@
 Imports System.Net.NetworkCredential
 
 Public Class Enviar
-    Public Function enviarEmail(ByVal emaildestino As String, ByVal asunto As String, ByVal mensaje As String) As Boolean
+    Public Shared Function enviarEmail(ByVal emaildestino As String, ByVal asunto As String, ByVal mensaje As String) As Boolean
         Try
             'Direccion de origen 
             Dim from_address As New MailAddress("agonzalez379@ikasle.ehu.eus", "HADS10")

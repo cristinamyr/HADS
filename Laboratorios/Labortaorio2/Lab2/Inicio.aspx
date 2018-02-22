@@ -78,7 +78,6 @@
                 <td class="auto-style6">password:</td>
                 <td class="auto-style16">
                     <asp:TextBox ID="t_pass" runat="server" TextMode="Password"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="req_pass" runat="server" ControlToValidate="t_pass" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -89,6 +88,7 @@
             <tr>
                 <td class="auto-style7" colspan="2">&nbsp;&nbsp;
                     <asp:Label ID="l_iniciarSesion" runat="server" ForeColor="Red" Text="      "></asp:Label>
+                    <asp:LinkButton ID="l_button" runat="server" Visible="False">aquí.</asp:LinkButton>
                 </td>
             </tr>
             <tr>
