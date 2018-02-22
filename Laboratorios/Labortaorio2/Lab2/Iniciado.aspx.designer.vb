@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class Iniciado
-
+    
     '''<summary>
     '''Control form1.
     '''</summary>

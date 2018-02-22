@@ -106,7 +106,6 @@
       <CustomToolNamespace>Cambiar Contraseña</CustomToolNamespace>
     </Content>
     <Content Include="Confirmar.aspx" />
-    <Content Include="Iniciado.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="Web.config" />
@@ -132,13 +131,6 @@
     <Compile Include="Confirmar.aspx.vb">
       <DependentUpon>Confirmar.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Iniciado.aspx.designer.vb">
-      <DependentUpon>Iniciado.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Iniciado.aspx.vb">
-      <DependentUpon>Iniciado.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Inicio.aspx.designer.vb">
       <DependentUpon>Inicio.aspx</DependentUpon>
@@ -187,8 +179,6 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
-    <None Include="My Project\PublishProfiles\HADS2018-10 - FTP.pubxml" />
-    <None Include="My Project\PublishProfiles\HADS2018-10 - Web Deploy.pubxml" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
