@@ -1,4 +1,4 @@
-﻿Imports AccesoBD.AccesoOleBD
+﻿Imports AccesoBD.AccesoSqlBD
 
 Public Class TareasAlumnos
     Inherits System.Web.UI.Page

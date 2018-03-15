@@ -1,4 +1,4 @@
-﻿Imports AccesoBD.AccesoOleBD
+﻿Imports AccesoBD.AccesoSqlBD
 Public Class InstanciarTarea
     Inherits System.Web.UI.Page
 
