@@ -33,7 +33,7 @@ Public Class AccesoSQL
         '     El usuario no debería haber realizado la tarea??
         ' los datos están en: TareasGenericas y EstudiantesTareas
 
-        Dim st = "SELECT TareasGenericas.Codigo, TareasGenericas.Descripcion, TareasGenericas.HEstimadas, TareasGenericas.TipoTarea, FROM  EstudiantesTareas INNER JOIN TareasGenericas ON EstudiantesTareas.CodTarea = TareasGenericas.Codigo WHERE TareasGenericas.Explotacion = 1 AND EstudiantesTareas.HReales = 0 AND EstudiantesTareas.email = '" & email & "'"
+        Dim st = "SELECT TareasGenericas.Codigo, TareasGenericas.Descripcion, TareasGenericas.HEstimadas, TareasGenericas.TipoTarea FROM  EstudiantesTareas INNER JOIN TareasGenericas ON EstudiantesTareas.CodTarea = TareasGenericas.Codigo WHERE TareasGenericas.Explotacion = 1 AND EstudiantesTareas.HReales = 0 AND EstudiantesTareas.email = '" & email & "'"
 
         DataAdapter = New SqlDataAdapter(st, conexion)
         DataAdapter.Fill(DataSet, "TareasGenericas")

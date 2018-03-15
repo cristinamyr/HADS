@@ -48,6 +48,9 @@
         </p>
         <asp:GridView ID="tablaAlumnos" runat="server" CellPadding="4" CssClass="auto-style5" ForeColor="#333333" GridLines="None" AllowSorting="True">
             <AlternatingRowStyle BackColor="White" />
+            <Columns>
+                <asp:ButtonField ButtonType="Button" Text="Instanciar" />
+            </Columns>
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
