@@ -1,4 +1,6 @@
-﻿Public Class AccesoBD
+﻿Imports System.Data.SqlClient
+
+Public Class AccesoBD
     Private Shared conexion As New SqlClient.SqlConnection
     Private Shared comando As New SqlClient.SqlCommand
 
@@ -89,6 +91,12 @@
         End If
     End Function
 
+    Public Shared Function obtenerCodigo(ByVal email As String) As Integer
+        Dim st = "Select numconfir from Usuarios where email = '" & email & "'"
+        comando = New SqlClient.SqlCommand(st, conexion)
+        Return comando.ExecuteScalar()
+    End Function
+
 
     Public Shared Function confirmarCodigo(ByVal email As String, ByVal codigo As Integer) As Integer
         If cumpleCaracteristicas(email, codigo) Then
@@ -96,5 +104,29 @@
         End If
         Return 0
     End Function
+
+    Public Shared Function esAlumno(ByVal email As String) As Integer
+        Dim resultado As SqlDataReader
+        Dim tipo As String = ""
+        Dim st = "SELECT tipo FROM Usuarios WHERE email = '" & email & "'"
+        comando = New SqlClient.SqlCommand(st, conexion)
+        resultado = comando.ExecuteReader
+        While resultado.Read
+            tipo = resultado.Item("tipo")
+        End While
+        resultado.Close()
+        If (tipo = "Alumno") Then
+            Return 1
+        Else
+            Return 0
+        End If
+    End Function
+
+    Public Shared Function obtenerTodasLasTareas() As SqlDataAdapter
+        Dim st = "SELECT * FROM TareasGenericas"
+        Dim tareasDataAdapter = New SqlDataAdapter(st, conexion)
+        Return tareasDataAdapter
+    End Function
+
 End Class
 

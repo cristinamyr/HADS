@@ -53,6 +53,17 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=tcp:hads-10.database.windows.net,1433;Initial Catalog=HADS10-TAREAS;P"& _ 
+            "ersist Security Info=True;User ID=HADS10;Password=Santurtzi8")>  _
+        Public ReadOnly Property HADS10_TAREASConnectionString() As String
+            Get
+                Return CType(Me("HADS10_TAREASConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

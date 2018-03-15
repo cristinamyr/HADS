@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class FormularioWeb
+Partial Public Class TareasProfesores
     
     '''<summary>
     '''Control form1.
@@ -23,6 +23,24 @@ Partial Public Class FormularioWeb
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
     
     '''<summary>
+    '''Control Panel1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
+    
+    '''<summary>
+    '''Control b_cerrarSesion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents b_cerrarSesion As Global.System.Web.UI.WebControls.LinkButton
+    
+    '''<summary>
     '''Control Label1.
     '''</summary>
     '''<remarks>
@@ -32,101 +50,47 @@ Partial Public Class FormularioWeb
     Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control l_email.
+    '''Control GridView1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents l_email As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
     
     '''<summary>
-    '''Control t_email.
+    '''Control GridView_datos.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents t_email As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents GridView_datos As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
-    '''Control req_email.
+    '''Control DropDownList1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents req_email As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''Control reg_email.
+    '''Control ddl_datos.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents reg_email As Global.System.Web.UI.WebControls.RegularExpressionValidator
+    Protected WithEvents ddl_datos As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
-    '''Control t_pass.
+    '''Control b_insertar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents t_pass As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control b_inciar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents b_inciar As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''Control l_iniciarSesion.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents l_iniciarSesion As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''Control l_button.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents l_button As Global.System.Web.UI.WebControls.LinkButton
-    
-    '''<summary>
-    '''Control h_registro.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents h_registro As Global.System.Web.UI.WebControls.HyperLink
-    
-    '''<summary>
-    '''Control h_pass.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents h_pass As Global.System.Web.UI.WebControls.HyperLink
-    
-    '''<summary>
-    '''Control l_conexion.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents l_conexion As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents b_insertar As Global.System.Web.UI.WebControls.Button
 End Class
