@@ -21,8 +21,8 @@
             font-size: large;
         }
         .auto-style5 {
-            width: 289px;
-            height: 180px;
+            width: 814px;
+            height: 248px;
             position: absolute;
             left: 88px;
             top: 368px;
@@ -43,10 +43,10 @@
             Seleccionar Asignatura
         </p>
         <p>
-            <asp:DropDownList ID="ddl_alumnos" runat="server" Height="60px" Width="203px">
+            <asp:DropDownList ID="ddl_alumnos" runat="server" Height="60px" AutoPostBack="True" Width="203px">
             </asp:DropDownList>
         </p>
-        <asp:GridView ID="tablaAlumnos" runat="server" CellPadding="4" CssClass="auto-style5" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="tablaAlumnos" runat="server" CellPadding="4" CssClass="auto-style5" ForeColor="#333333" GridLines="None" AllowSorting="True">
             <AlternatingRowStyle BackColor="White" />
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -59,6 +59,11 @@
             <SortedDescendingCellStyle BackColor="#E9EBEF" />
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HADS10-TAREASConnectionString %>" SelectCommand="SELECT TareasGenericas.Codigo, TareasGenericas.Descripcion, TareasGenericas.HEstimadas, TareasGenericas.TipoTarea, TareasGenericas.CodAsig FROM TareasGenericas INNER JOIN GruposClase ON GruposClase.codigoasig = TareasGenericas.CodAsig INNER JOIN EstudiantesGrupo ON EstudiantesGrupo.Grupo = GruposClase.codigo AND EstudiantesGrupo.Email = @email WHERE TareasGenericas.Explotacion=1">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="ddl_alumnos" Name="email" PropertyName="SelectedValue" />
+            </SelectParameters>
+        </asp:SqlDataSource>
     </form>
 </body>
 </html>

@@ -4,8 +4,10 @@ Public Class TareasAlumnos
     Inherits System.Web.UI.Page
 
     Private dataSet As DataSet
+    Private dataSet2 As DataSet
     Private dataView As DataView
     Private dataTable As DataTable
+    Private dataTable2 As DataTable
 
     Dim tbTareasAsig As DataTable
 
@@ -14,10 +16,14 @@ Public Class TareasAlumnos
             Dim email = Session.Contents("email")
             Session.Contents("DataSet") = buscarTareasAlumnoPorEmail(email)
             dataSet = Session.Contents("DataSet")
-            dataTable = dataSet.Tables("TareasG")
+            dataTable = dataSet.Tables("TareasGenericas")
 
-            ddl_alumnos.DataSource = dataTable
-            ddl_alumnos.DataValueField = "CodAsig"
+            dataSet2 = buscarAsignaturasAlumnoPorEmail(email)
+            dataTable2 = dataSet2.Tables("GruposClase")
+            MsgBox(dataTable.Rows.Count)
+
+            ddl_alumnos.DataSource = dataTable2
+            ddl_alumnos.DataValueField = "codigoasig"
             ddl_alumnos.DataBind()
 
             dataView = New DataView(dataTable)
@@ -26,10 +32,21 @@ Public Class TareasAlumnos
             tablaAlumnos.DataBind()
         Else
             dataSet = Session.Contents("DataSet")
+            dataTable = dataSet.Tables("TareasGenericas")
+            dataView = New DataView(dataTable)
+            dataView.RowFilter = "CodAsig='" & ddl_alumnos.SelectedValue & "'"
+            tablaAlumnos.DataSource = dataView
+            tablaAlumnos.DataBind()
+
         End If
     End Sub
 
+    Protected Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        desconectar()
+    End Sub
+
     Protected Sub ddl_alumnos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddl_alumnos.SelectedIndexChanged
+        dataView = New DataView(dataTable)
         dataView.RowFilter = "CodAsig='" & ddl_alumnos.SelectedValue & "'"
         tablaAlumnos.DataSource = dataView
         tablaAlumnos.DataBind()
@@ -38,5 +55,11 @@ Public Class TareasAlumnos
     Protected Sub l_cerrarSesion_Click(sender As Object, e As EventArgs) Handles l_cerrarSesion.Click
         Session.Abandon()
         Response.Redirect("Inicio.aspx")
+    End Sub
+
+    Protected Sub TablaAlumnos_Sorting(sender As Object, e As GridViewSortEventArgs) Handles tablaAlumnos.Sorting
+        dataView.Sort = e.SortExpression
+        tablaAlumnos.DataSource = dataView.ToTable
+        tablaAlumnos.DataBind()
     End Sub
 End Class

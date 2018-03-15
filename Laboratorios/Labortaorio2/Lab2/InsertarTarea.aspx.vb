@@ -30,7 +30,7 @@ Public Class InsertarTarea
 
         Try
             DataTable.Rows.InsertAt(NuevaFila, DataTable.Rows.Count + 1) 'añadimos la nueva fila en DT
-
+            DataAdapter.InsertCommand = New SqlCommand
             DataAdapter.Update(DataSet, "TareasGenericas") 'refrescamos el DA
             DataSet.AcceptChanges() 'IMPORTANTE HACERLO!!
 

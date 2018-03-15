@@ -65,7 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoBD.vb" />
-    <Compile Include="AccesoOleBD.vb" />
+    <Compile Include="AccesoSqlBD.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
