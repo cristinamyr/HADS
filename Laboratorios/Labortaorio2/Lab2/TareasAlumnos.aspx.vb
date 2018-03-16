@@ -14,13 +14,13 @@ Public Class TareasAlumnos
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
             Dim email = Session.Contents("email")
+            conectarBD()
             Session.Contents("DataSet") = buscarTareasAlumnoPorEmail(email)
             dataSet = Session.Contents("DataSet")
             dataTable = dataSet.Tables("TareasGenericas")
 
             dataSet2 = buscarAsignaturasAlumnoPorEmail(email)
             dataTable2 = dataSet2.Tables("GruposClase")
-            MsgBox(dataTable.Rows.Count)
 
             ddl_alumnos.DataSource = dataTable2
             ddl_alumnos.DataValueField = "codigoasig"
@@ -53,6 +53,7 @@ Public Class TareasAlumnos
     End Sub
 
     Protected Sub l_cerrarSesion_Click(sender As Object, e As EventArgs) Handles l_cerrarSesion.Click
+        Session.RemoveAll()
         Session.Abandon()
         Response.Redirect("Inicio.aspx")
     End Sub
@@ -61,5 +62,15 @@ Public Class TareasAlumnos
         dataView.Sort = e.SortExpression
         tablaAlumnos.DataSource = dataView.ToTable
         tablaAlumnos.DataBind()
+    End Sub
+
+    Protected Sub tablaAlumnos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tablaAlumnos.SelectedIndexChanged
+        '("heeeyyyy")
+        Dim nombreTarea = dataTable.Rows(tablaAlumnos.SelectedIndex).Item(0).ToString()
+        Dim estimacion = dataTable.Rows(tablaAlumnos.SelectedIndex).Item(2).ToString()
+        ' MsgBox("hola")
+        'Dim direccion = "InstanciarTarea.aspx?nomTarea=" & nombreTarea & "&estimacion=" & estimacion
+
+        Response.Redirect("InstanciarTarea.aspx?nomTarea=" & nombreTarea & "&estimacion=" & estimacion & "")
     End Sub
 End Class

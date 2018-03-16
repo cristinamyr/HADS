@@ -128,5 +128,11 @@ Public Class AccesoBD
         Return tareasDataAdapter
     End Function
 
+    Public Shared Function obtenerDataAdapter() As SqlDataAdapter
+        Dim st = "SELECT * FROM EstudiantesTareas"
+        Dim tareasDataAdapter = New SqlDataAdapter(st, conexion)
+        Return tareasDataAdapter
+    End Function
+
 End Class
 

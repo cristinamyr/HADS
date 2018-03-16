@@ -32,6 +32,15 @@ Partial Public Class InstanciarTarea
     Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
     
     '''<summary>
+    '''Control lb_cerrarSesion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lb_cerrarSesion As Global.System.Web.UI.WebControls.LinkButton
+    
+    '''<summary>
     '''Control l_usuario.
     '''</summary>
     '''<remarks>
@@ -84,4 +93,58 @@ Partial Public Class InstanciarTarea
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents t_usuario As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control t_tarea.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents t_tarea As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control t_hest.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents t_hest As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control t_hreal.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents t_hreal As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control h_volver.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents h_volver As Global.System.Web.UI.WebControls.HyperLink
+    
+    '''<summary>
+    '''Control TareasAlumno.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents TareasAlumno As Global.System.Web.UI.WebControls.GridView
+    
+    '''<summary>
+    '''Control l_retroalimentacion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents l_retroalimentacion As Global.System.Web.UI.WebControls.Label
 End Class
