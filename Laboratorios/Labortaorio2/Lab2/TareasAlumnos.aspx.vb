@@ -45,13 +45,6 @@ Public Class TareasAlumnos
         desconectar()
     End Sub
 
-    Protected Sub ddl_alumnos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddl_alumnos.SelectedIndexChanged
-        dataView = New DataView(dataTable)
-        dataView.RowFilter = "CodAsig='" & ddl_alumnos.SelectedValue & "'"
-        tablaAlumnos.DataSource = dataView
-        tablaAlumnos.DataBind()
-    End Sub
-
     Protected Sub l_cerrarSesion_Click(sender As Object, e As EventArgs) Handles l_cerrarSesion.Click
         Session.RemoveAll()
         Session.Abandon()
@@ -67,10 +60,14 @@ Public Class TareasAlumnos
     Protected Sub tablaAlumnos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tablaAlumnos.SelectedIndexChanged
         '("heeeyyyy")
         Dim nombreTarea = dataTable.Rows(tablaAlumnos.SelectedIndex).Item(0).ToString()
-        Dim estimacion = dataTable.Rows(tablaAlumnos.SelectedIndex).Item(2).ToString()
+        Dim estimacion = dataTable.Rows(tablaAlumnos.SelectedIndex).Item(3).ToString()
         ' MsgBox("hola")
         'Dim direccion = "InstanciarTarea.aspx?nomTarea=" & nombreTarea & "&estimacion=" & estimacion
 
         Response.Redirect("InstanciarTarea.aspx?nomTarea=" & nombreTarea & "&estimacion=" & estimacion & "")
+    End Sub
+
+    Protected Sub ddl_alumnos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddl_alumnos.SelectedIndexChanged
+
     End Sub
 End Class

@@ -59,7 +59,8 @@
             <SortedDescendingCellStyle BackColor="#E9EBEF" />
             <SortedDescendingHeaderStyle BackColor="#4870BE" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HADS10-TAREASConnectionString %>" SelectCommand="SELECT TareasGenericas.Codigo, TareasGenericas.Descripcion, TareasGenericas.HEstimadas, TareasGenericas.TipoTarea, TareasGenericas.CodAsig FROM TareasGenericas INNER JOIN GruposClase ON GruposClase.codigoasig = TareasGenericas.CodAsig INNER JOIN EstudiantesGrupo ON EstudiantesGrupo.Grupo = GruposClase.codigo AND EstudiantesGrupo.Email = @email WHERE TareasGenericas.Explotacion=1">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HADS10-TAREASConnectionString %>" SelectCommand="SELECT * FROM TareasGenericas WHERE Codigo NOT IN (SELECT CodTarea FROM EstudiantesTareas WHERE Email = @email) AND Explotacion = 1
+">
             <SelectParameters>
                 <asp:ControlParameter ControlID="ddl_alumnos" Name="email" PropertyName="SelectedValue" />
             </SelectParameters>

@@ -30,7 +30,7 @@ Public Class AccesoSqlBD
     End Function
 
     Public Shared Function buscarTareasAlumnoPorEmail(ByVal email As String) As DataSet
-        Dim st = "SELECT TareasGenericas.Codigo, TareasGenericas.Descripcion, TareasGenericas.HEstimadas, TareasGenericas.TipoTarea, TareasGenericas.CodAsig FROM TareasGenericas INNER JOIN GruposClase ON GruposClase.codigoasig = TareasGenericas.CodAsig INNER JOIN EstudiantesGrupo ON EstudiantesGrupo.Grupo = GruposClase.codigo AND EstudiantesGrupo.Email = '" & email & "' WHERE TareasGenericas.Explotacion=1"
+        Dim st = "SELECT * FROM TareasGenericas WHERE Codigo NOT IN (SELECT CodTarea FROM EstudiantesTareas WHERE Email = '" & email & "') AND Explotacion = 1"
         DataAdapter = New SqlDataAdapter(st, conexion)
         DataAdapter.Fill(DataSet, "TareasGenericas")
         Return DataSet

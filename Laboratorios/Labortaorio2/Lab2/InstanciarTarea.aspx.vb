@@ -27,7 +27,7 @@ Public Class InstanciarTarea
 
         dview = New DataView(dtable)
         dview.RowFilter = "Email='" & Session.Contents("email") & "'"
-        TareasAlumno.DataSource = dview.ToTable()
+        TareasAlumno.DataSource = dview
         TareasAlumno.DataBind()
     End Sub
 
