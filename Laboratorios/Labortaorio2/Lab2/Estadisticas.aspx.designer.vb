@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class TareasProfesor
+Partial Public Class Estadisticas
     
     '''<summary>
     '''Control form1.
@@ -41,47 +41,47 @@ Partial Public Class TareasProfesor
     Protected WithEvents Panel2 As Global.System.Web.UI.WebControls.Panel
     
     '''<summary>
-    '''Control Panel3.
+    '''Control DropDownList1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Panel3 As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents DropDownList1 As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''Control h_asignaturas.
+    '''Control DDL_DATOS.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents h_asignaturas As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents DDL_DATOS As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
-    '''Control h_tareas.
+    '''Control chart_datos.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents h_tareas As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents chart_datos As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
-    '''Control h_grupos.
+    '''Control Label1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents h_grupos As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control h_Estadisticas.
+    '''Control Chart1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents h_Estadisticas As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents Chart1 As Global.System.Web.UI.DataVisualization.Charting.Chart
 End Class

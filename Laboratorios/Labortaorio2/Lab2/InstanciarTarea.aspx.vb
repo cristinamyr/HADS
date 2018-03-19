@@ -10,21 +10,17 @@ Public Class InstanciarTarea
     Private dtable As DataTable
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        If IsPostBack Then
-            dset = Session.Contents("dset")
-            dtable = dset.Tables("EstudiantesTarea")
-
-        Else
+        If Not Page.IsPostBack Then
             t_tarea.Text = Request.QueryString("nomTarea")
             t_hest.Text = Request.QueryString("estimacion")
             t_usuario.Text = Session.Contents("email")
             conectarBD()
             dset = buscarEstudiantesTarea()
             Session.Contents("dset") = dset
-            dtable = dset.Tables("EstudiantesTareas")
-
         End If
 
+        dset = Session.Contents("dset")
+        dtable = dset.Tables("EstudiantesTareas")
         dview = New DataView(dtable)
         dview.RowFilter = "Email='" & Session.Contents("email") & "'"
         TareasAlumno.DataSource = dview
@@ -51,13 +47,17 @@ Public Class InstanciarTarea
 
         Try
             dtable.Rows.InsertAt(NuevaFila, dtable.Rows.Count + 1) 'añadimos la nueva fila en DT
-            DataAdapter.Update(dset, "TareasGenericas") 'refrescamos el DA
+            DataAdapter.Update(dset, "EstudiantesTareas")
             dset.AcceptChanges() 'IMPORTANTE HACERLO!!
-
+            Session.Contents("dset") = dset
+            MsgBox("Tarea instanciada")
+            MsgBox(dset.Tables("EstudiantesTareas").Rows.Count.ToString)
             l_retroalimentacion.Text = "La tarea se ha instanciado correctamente!!"
         Catch ex As Exception
             l_retroalimentacion.Text = "ERROR: " + ex.Message
         End Try
+
+
     End Sub
 
     Protected Sub lb_cerrarSesion_Click(sender As Object, e As EventArgs) Handles lb_cerrarSesion.Click

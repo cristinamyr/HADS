@@ -45,6 +45,13 @@
         .auto-style9 {
             font-size: xx-large;
         }
+        .auto-style10 {
+            width: 113px;
+            height: 27px;
+            position: absolute;
+            left: 91px;
+            top: 461px;
+        }
     </style>
 </head>
 <body>
@@ -68,6 +75,7 @@
                     <asp:HyperLink ID="h_asignaturas" runat="server" CssClass="auto-style5">Asignaturas</asp:HyperLink>
                     <asp:HyperLink ID="h_tareas" runat="server" CssClass="auto-style6" NavigateUrl="~/TareasProfesor.aspx">Tareas</asp:HyperLink>
                     <asp:HyperLink ID="h_grupos" runat="server" CssClass="auto-style7">Grupos</asp:HyperLink>
+                    <asp:HyperLink ID="h_Estadisticas" runat="server" CssClass="auto-style10" NavigateUrl="~/Estadisticas.aspx">Estadisticas</asp:HyperLink>
                 </asp:Panel>
             </asp:Panel>
         </div>

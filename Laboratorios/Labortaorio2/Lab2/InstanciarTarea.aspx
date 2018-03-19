@@ -129,7 +129,18 @@
                     <asp:TextBox ID="t_hest" runat="server" CssClass="auto-style12" Enabled="False"></asp:TextBox>
                     <asp:TextBox ID="t_hreal" runat="server" CssClass="auto-style13"></asp:TextBox>
                     <asp:HyperLink ID="h_volver" runat="server" CssClass="auto-style14" NavigateUrl="~/TareasAlumnos.aspx">Ver Tareas</asp:HyperLink>
-                    <asp:GridView ID="TareasAlumno" runat="server" CssClass="auto-style16">
+                    <asp:GridView ID="TareasAlumno" runat="server" CssClass="auto-style16" CellPadding="4" ForeColor="#333333" GridLines="None">
+                        <AlternatingRowStyle BackColor="White" />
+                        <EditRowStyle BackColor="#2461BF" />
+                        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#EFF3FB" />
+                        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                        <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                        <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                        <SortedDescendingHeaderStyle BackColor="#4870BE" />
                     </asp:GridView>
                     <asp:Label ID="l_retroalimentacion" runat="server" CssClass="auto-style17" Text="  "></asp:Label>
                 </div>

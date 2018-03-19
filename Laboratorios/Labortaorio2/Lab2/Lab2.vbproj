@@ -55,6 +55,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -107,6 +108,7 @@
       <CustomToolNamespace>Cambiar Contraseña</CustomToolNamespace>
     </Content>
     <Content Include="Confirmar.aspx" />
+    <Content Include="Estadisticas.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="InsertarTarea.aspx" />
     <Content Include="InstanciarTarea.aspx" />
@@ -143,6 +145,13 @@
     </Compile>
     <Compile Include="Confirmar.aspx.vb">
       <DependentUpon>Confirmar.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Estadisticas.aspx.designer.vb">
+      <DependentUpon>Estadisticas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas.aspx.vb">
+      <DependentUpon>Estadisticas.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Inicio.aspx.designer.vb">
