@@ -33,6 +33,22 @@
             left: 25px;
             top: 143px;
         }
+        .auto-style6 {
+            width: 166px;
+            height: 39px;
+            position: absolute;
+            left: 94px;
+            top: 47px;
+            font-size: medium;
+        }
+        .auto-style7 {
+            font-size: medium;
+            width: 130px;
+            height: 27px;
+            position: absolute;
+            left: 1384px;
+            top: 54px;
+        }
     </style>
 </head>
 <body style="height: 920px">
@@ -40,7 +56,9 @@
         <div class="auto-style1">
             <asp:Panel ID="Panel1" runat="server" BackColor="#99CCFF" Height="102px">
                 <div class="auto-style2">
-                    <span class="auto-style3">&nbsp;</span><br /> Dedicación de los alumnos<asp:Panel ID="Panel2" runat="server" Height="126px">
+                    <span class="auto-style3">&nbsp;</span><br /> Dedicación de los alumnos<asp:HyperLink ID="HyperLink1" runat="server" CssClass="auto-style6" NavigateUrl="~/Profesores.aspx">Volver al menú</asp:HyperLink>
+                    <asp:LinkButton ID="LinkButton1" runat="server" CssClass="auto-style7">Cerrar Sesión</asp:LinkButton>
+                    &nbsp;<asp:Panel ID="Panel2" runat="server" Height="126px">
                         <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" CssClass="auto-style4" DataSourceID="DDL_DATOS" DataTextField="Codigo" DataValueField="Codigo">
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="DDL_DATOS" runat="server" ConnectionString="<%$ ConnectionStrings:HADS10-TAREASConnectionString %>" SelectCommand="SELECT TareasGenericas.Codigo FROM TareasGenericas INNER JOIN GruposClase ON GruposClase.codigoasig = TareasGenericas.CodAsig INNER JOIN ProfesoresGrupo ON ProfesoresGrupo.codigogrupo = GruposClase.codigo WHERE ProfesoresGrupo.email = @email">
@@ -69,7 +87,7 @@
                         <br />
                         <br />
                     </asp:Panel>
-                </div>
+                    &nbsp;</div>
             </asp:Panel>
         </div>
     </form>

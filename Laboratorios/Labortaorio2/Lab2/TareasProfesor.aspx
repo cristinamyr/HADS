@@ -53,6 +53,13 @@
             top: 334px;
             right: 1351px;
         }
+        .auto-style10 {
+            width: 272px;
+            height: 31px;
+            position: absolute;
+            left: 81px;
+            top: 59px;
+        }
     </style>
 </head>
 <body>
@@ -62,7 +69,9 @@
                 <div class="auto-style4">
                     <span class="auto-style2"><strong>
                     <br />
-                    PROFESOR</strong></span><strong><br class="auto-style2" /> </strong><span class="auto-style2"><strong>GESTIÓN DE TAREAS GENÉRICAS</strong><asp:LinkButton ID="b_cerrarSesion" runat="server" CssClass="auto-style5" Font-Size="Large">Cerrar sesión</asp:LinkButton>
+                    </strong>
+                    <asp:HyperLink ID="HyperLink1" runat="server" CssClass="auto-style10" NavigateUrl="~/Profesores.aspx">Volver al menú principal</asp:HyperLink>
+                    <strong>PROFESOR</strong></span><strong><br class="auto-style2" /> </strong><span class="auto-style2"><strong>GESTIÓN DE TAREAS GENÉRICAS</strong><asp:LinkButton ID="b_cerrarSesion" runat="server" CssClass="auto-style5" Font-Size="Large">Cerrar sesión</asp:LinkButton>
                     </span>
                     <asp:Label ID="Label1" runat="server" CssClass="auto-style6" Text="Seleccionar asignatura:"></asp:Label>
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="auto-style7" DataKeyNames="Codigo" DataSourceID="GridView_datos" AllowSorting="True" CellPadding="4" ForeColor="#333333" GridLines="None">

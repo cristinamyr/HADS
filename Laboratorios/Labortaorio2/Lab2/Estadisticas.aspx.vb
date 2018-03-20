@@ -5,4 +5,9 @@
 
     End Sub
 
+    Protected Sub LinkButton1_Click(sender As Object, e As EventArgs) Handles LinkButton1.Click
+        Session.RemoveAll()
+        Session.Abandon()
+        Response.Redirect("Inicio.aspx")
+    End Sub
 End Class

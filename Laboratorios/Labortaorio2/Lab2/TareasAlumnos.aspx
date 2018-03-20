@@ -27,15 +27,24 @@
             left: 88px;
             top: 368px;
         }
+        .auto-style6 {
+            width: 226px;
+            height: 26px;
+            position: absolute;
+            left: 100px;
+            top: 62px;
+        }
     </style>
 </head>
 <body style="height: 839px">
     <form id="form1" runat="server">
         <div class="auto-style1">
             <asp:Panel ID="Panel1" runat="server" BackColor="#66CCFF" Height="124px">
-                <strong><span>
+                <span><strong>
                 <br class="auto-style4" />
-                </span><span class="auto-style4">ALUMNOS</span><br class="auto-style4" /> </strong><span class="auto-style4"><strong>GESTIÓN DE TAREAS GENÉRICAS </strong></span>
+                </strong>
+                <asp:HyperLink ID="HyperLink1" runat="server" CssClass="auto-style6" NavigateUrl="~/Alumnos.aspx">Volver al menú inicial</asp:HyperLink>
+                </span><strong><span class="auto-style4">ALUMNOS</span><br class="auto-style4" /> </strong><span class="auto-style4"><strong>GESTIÓN DE TAREAS GENÉRICAS </strong></span>
             </asp:Panel>
         </div>
         <asp:LinkButton ID="l_cerrarSesion" runat="server" CssClass="auto-style3">Cerrar Sesión</asp:LinkButton>
