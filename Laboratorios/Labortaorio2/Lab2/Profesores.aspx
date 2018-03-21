@@ -76,6 +76,9 @@
                     <asp:HyperLink ID="h_tareas" runat="server" CssClass="auto-style6" NavigateUrl="~/TareasProfesor.aspx">Tareas</asp:HyperLink>
                     <asp:HyperLink ID="h_grupos" runat="server" CssClass="auto-style7">Grupos</asp:HyperLink>
                     <asp:HyperLink ID="h_Estadisticas" runat="server" CssClass="auto-style10" NavigateUrl="~/Estadisticas.aspx">Estadisticas</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/ImportarXML.aspx" style="top: 559px; left: 93px; position: absolute; height: 22px; width: 103px">Importar v. XMLDocument</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink2" runat="server" style="top: 673px; left: 104px; position: absolute; height: 22px; width: 84px">Exportar</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink3" runat="server" style="top: 778px; left: 70px; position: absolute; height: 22px; width: 159px">Importar v. Dataset (Opcional)</asp:HyperLink>
                 </asp:Panel>
             </asp:Panel>
         </div>

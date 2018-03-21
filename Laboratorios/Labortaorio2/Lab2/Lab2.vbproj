@@ -103,12 +103,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Alumnos.aspx" />
+    <Content Include="App_Data\HAS.xml" />
+    <Content Include="App_Data\SEG.xml" />
+    <Content Include="App_Data\XSLTFile.xsl" />
     <Content Include="CambiarPassword.aspx" />
     <Content Include="CambiarPassword2.aspx">
       <CustomToolNamespace>Cambiar Contraseña</CustomToolNamespace>
     </Content>
     <Content Include="Confirmar.aspx" />
     <Content Include="Estadisticas.aspx" />
+    <Content Include="ImportarXML.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="InsertarTarea.aspx" />
     <Content Include="InstanciarTarea.aspx" />
@@ -152,6 +156,13 @@
     </Compile>
     <Compile Include="Estadisticas.aspx.vb">
       <DependentUpon>Estadisticas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ImportarXML.aspx.designer.vb">
+      <DependentUpon>ImportarXML.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImportarXML.aspx.vb">
+      <DependentUpon>ImportarXML.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Inicio.aspx.designer.vb">
@@ -232,6 +243,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App_Data\tareas.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
