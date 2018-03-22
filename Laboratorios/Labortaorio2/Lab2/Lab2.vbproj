@@ -112,6 +112,7 @@
     </Content>
     <Content Include="Confirmar.aspx" />
     <Content Include="Estadisticas.aspx" />
+    <Content Include="ExportarXML.aspx" />
     <Content Include="ImportarXML.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="InsertarTarea.aspx" />
@@ -156,6 +157,13 @@
     </Compile>
     <Compile Include="Estadisticas.aspx.vb">
       <DependentUpon>Estadisticas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ExportarXML.aspx.designer.vb">
+      <DependentUpon>ExportarXML.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportarXML.aspx.vb">
+      <DependentUpon>ExportarXML.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ImportarXML.aspx.designer.vb">

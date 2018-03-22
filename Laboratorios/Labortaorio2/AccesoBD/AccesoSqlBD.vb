@@ -47,11 +47,11 @@ Public Class AccesoSqlBD
     End Function
 
     Public Shared Function buscarTareasProfesor(ByVal email As String) As DataSet
-        Dim st = "SELECT GruposClase.codigoasig FROM GruposClase INNER JOIN EstudiantesGrupo ON EstudiantesGrupo.email ='" & email & "' AND EstudiantesGrupo.Grupo = GruposClase.codigo"
+        Dim st = "SELECT * FROM TareasGenericas"
         DataAdapter = New SqlDataAdapter(st, conexion)
         'DataSet.Clear()
-        DataAdapter.Fill(DataSet, "GruposClase")
+        DataAdapter.Fill(DataSet, "TareasGenericas")
         Return DataSet
-
     End Function
+
 End Class

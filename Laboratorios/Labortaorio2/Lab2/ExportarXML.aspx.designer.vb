@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class ImportarXML
+Partial Public Class ExportarXML
     
     '''<summary>
     '''Control form1.
@@ -21,6 +21,33 @@ Partial Public Class ImportarXML
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+    
+    '''<summary>
+    '''Control GridView1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
+    
+    '''<summary>
+    '''Control datos_gvw.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents datos_gvw As Global.System.Web.UI.WebControls.SqlDataSource
+    
+    '''<summary>
+    '''Control Label1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''Control ddl_asignaturas.
@@ -41,29 +68,11 @@ Partial Public Class ImportarXML
     Protected WithEvents datos_ddl As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
-    '''Control b_importar.
+    '''Control b_exportarXML.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents b_exportXML As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''Control Xml1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Xml1 As Global.System.Web.UI.WebControls.Xml
-    
-    '''<summary>
-    '''Control l_retroalimentacion.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents l_retroalimentacion As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents b_exportarXML As Global.System.Web.UI.WebControls.Button
 End Class
