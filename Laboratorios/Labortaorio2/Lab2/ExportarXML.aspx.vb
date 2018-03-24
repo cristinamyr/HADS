@@ -1,26 +1,50 @@
-﻿Public Class ExportarXML
+﻿Imports System.Xml
+Imports AccesoBD.AccesoBD
+Imports AccesoBD.AccesoSqlBD
+
+Public Class ExportarXML
     Inherits System.Web.UI.Page
 
+    Private dataView As New DataView
+    Private dataTable As New DataTable
+    Private dset As New DataSet
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        dset = New DataSet
+        dataTable = New DataTable
+        dataView = New DataView
+        If Not Page.IsPostBack Then
+            Dim email = Session.Contents("email")
+            conectarBD()
+            Session.Contents("DataSet") = buscarTareas()
+        End If
+
+        dset = Session.Contents("DataSet")
+        dataTable = dset.Tables(0)
+        dataView = New DataView(dataTable)
+        dataView.RowFilter = "CodAsig='" & ddl_asignaturas.SelectedValue & "'"
+        MsgBox(dataTable.Columns.Count)
+        tareas_view.DataSource = dataView
+        tareas_view.DataBind()
 
     End Sub
 
     Protected Sub b_exportarXML_Click(sender As Object, e As EventArgs) Handles b_exportarXML.Click
-        ' Hay que tener en cuenta el ColumnMapping para los atributos
-        ' Hay que cambiar los nombres para que coincidan
-        ' 
         Dim xd As New XmlDocument
-        xd.Load(Server.MapPath("App_Data/" & ddl_asignaturas.SelectedValue & ".xml"))
-        Dim Tareas As XmlNodeList
-        Tareas = xd.GetElementsByTagName("tarea")
-        For Each tarea As XmlNode In Tareas
-            Dim nuevafila = dt.NewRow()
-            nuevafila("Codigo") = tarea.Attributes(0).Value
-            nuevafila("Descripcion") = tarea.ChildNodes(0).ChildNodes(0).Value
-            nuevafila("CodAsig") = ddl_asignaturas.SelectedValue
-            nuevafila("HEstimadas") = tarea.ChildNodes(1).ChildNodes(0).Value
-            nuevafila("Explotacion") = tarea.ChildNodes(2).ChildNodes(0).Value
-            nuevafila("TipoTarea") = tarea.ChildNodes(3).ChildNodes(0).Value
-        Next
+
+
+        Try
+            xd.Load(Server.MapPath("App_Data/" & ddl_asignaturas.SelectedValue & ".xml"))
+            'aquí va todo lo del write
+            xd.Save(Server.MapPath("./App_Data/" & ddl_asignaturas.SelectedValue & ".xml"))
+        Catch ex As Exception
+            MsgBox("ups!")
+        End Try
+
     End Sub
+
+    Protected Sub ddl_asignaturas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddl_asignaturas.SelectedIndexChanged
+
+    End Sub
+
 End Class

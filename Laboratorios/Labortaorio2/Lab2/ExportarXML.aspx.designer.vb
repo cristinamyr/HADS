@@ -23,24 +23,6 @@ Partial Public Class ExportarXML
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
     
     '''<summary>
-    '''Control GridView1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
-    
-    '''<summary>
-    '''Control datos_gvw.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents datos_gvw As Global.System.Web.UI.WebControls.SqlDataSource
-    
-    '''<summary>
     '''Control Label1.
     '''</summary>
     '''<remarks>
@@ -75,4 +57,13 @@ Partial Public Class ExportarXML
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents b_exportarXML As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control tareas_view.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tareas_view As Global.System.Web.UI.WebControls.GridView
 End Class

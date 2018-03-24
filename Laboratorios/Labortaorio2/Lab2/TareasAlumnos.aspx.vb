@@ -29,7 +29,6 @@ Public Class TareasAlumnos
 
         dataSet = Session.Contents("DataSet")
         dataTable = dataSet.Tables(0)
-        dataView.Dispose()
         dataView = New DataView(dataTable)
         dataView.RowFilter = "CodAsig='" & ddl_alumnos.SelectedValue & "'"
         tablaAlumnos.DataSource = dataView
@@ -53,8 +52,8 @@ Public Class TareasAlumnos
     End Sub
 
     Protected Sub tablaAlumnos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tablaAlumnos.SelectedIndexChanged
-        Dim nombreTarea = dataTable.Rows(tablaAlumnos.SelectedIndex).Item(0).ToString()
-        Dim estimacion = dataTable.Rows(tablaAlumnos.SelectedIndex).Item(3).ToString()
+        Dim nombreTarea = tablaAlumnos.Rows(tablaAlumnos.SelectedIndex).Cells(0).ToString()
+        Dim estimacion = tablaAlumnos.Rows(tablaAlumnos.SelectedIndex).Cells(3).ToString()
 
         Response.Redirect("InstanciarTarea.aspx?nomTarea=" & nombreTarea & "&estimacion=" & estimacion & "")
     End Sub

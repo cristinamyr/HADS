@@ -111,6 +111,27 @@
         .auto-style17 {
             text-align: center;
         }
+        .auto-style18 {
+            width: 21px;
+            height: 27px;
+            position: absolute;
+            left: 456px;
+            top: 180px;
+        }
+        .auto-style19 {
+            width: 34px;
+            height: 36px;
+            position: absolute;
+            left: 834px;
+            top: 301px;
+        }
+        .auto-style20 {
+            width: 29px;
+            height: 27px;
+            position: absolute;
+            left: 334px;
+            top: 527px;
+        }
     </style>
 </head>
 <body>
@@ -120,6 +141,7 @@
                 <div class="auto-style17">
                     <br />
                     PROFESOR<br /> GESTIÓN DE TAREAS GENÉRICAS<asp:Label ID="Label1" runat="server" CssClass="auto-style3" Text="Código:"></asp:Label>
+                    <asp:RequiredFieldValidator ID="req_codigo" runat="server" ControlToValidate="t_codigo" CssClass="auto-style18" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                     <asp:TextBox ID="t_codigo" runat="server" CssClass="auto-style4"></asp:TextBox>
                     <asp:Label ID="Label2" runat="server" CssClass="auto-style5" Text="Descripción:"></asp:Label>
                     <asp:TextBox ID="t_descripcion" runat="server" CssClass="auto-style6"></asp:TextBox>
@@ -149,6 +171,8 @@
                         <SortedDescendingHeaderStyle BackColor="#15524A" />
                     </asp:GridView>
                     <asp:SqlDataSource ID="GV_datos" runat="server"></asp:SqlDataSource>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="t_estimacion" CssClass="auto-style20" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="req_desc" runat="server" ControlToValidate="t_descripcion" CssClass="auto-style19" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                     <asp:Label ID="l_retroalimentacion" runat="server" CssClass="auto-style16" Text=" "></asp:Label>
                     <asp:Button ID="b_insertar" runat="server" BackColor="#99FFCC" CssClass="auto-style13" Text="Insertar nueva tarea" />
                     <asp:Label ID="Label5" runat="server" CssClass="auto-style11" Text="Tipo tarea:"></asp:Label>

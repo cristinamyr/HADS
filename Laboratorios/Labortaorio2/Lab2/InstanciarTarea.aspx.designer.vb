@@ -147,4 +147,13 @@ Partial Public Class InstanciarTarea
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents l_retroalimentacion As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control req_hreal.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents req_hreal As Global.System.Web.UI.WebControls.RequiredFieldValidator
 End Class

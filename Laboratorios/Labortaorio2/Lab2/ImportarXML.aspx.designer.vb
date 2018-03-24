@@ -47,7 +47,7 @@ Partial Public Class ImportarXML
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents b_exportXML As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents b_importar As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''Control Xml1.

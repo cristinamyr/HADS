@@ -24,7 +24,7 @@ Public Class AccesoSqlBD
     Public Shared Function buscarAsignaturasAlumnoPorEmail(ByVal email As String) As DataSet
         Dim st = "SELECT GruposClase.codigoasig FROM GruposClase INNER JOIN EstudiantesGrupo ON EstudiantesGrupo.email ='" & email & "' AND EstudiantesGrupo.Grupo = GruposClase.codigo"
         DataAdapter = New SqlDataAdapter(st, conexion)
-        'DataSet.Clear()
+        DataSet = New DataSet
         DataAdapter.Fill(DataSet, "GruposClase")
         Return DataSet
 
@@ -33,7 +33,7 @@ Public Class AccesoSqlBD
     Public Shared Function buscarTareasAlumnoPorEmail(ByVal email As String) As DataSet
         Dim st = "SELECT * FROM TareasGenericas WHERE Codigo NOT IN (SELECT CodTarea FROM EstudiantesTareas WHERE Email = '" & email & "') AND Explotacion = 1"
         DataAdapter = New SqlDataAdapter(st, conexion)
-        DataSet.Clear()
+        DataSet = New DataSet
         DataAdapter.Fill(DataSet, "TareasGenericas")
         Return DataSet
     End Function
@@ -41,17 +41,16 @@ Public Class AccesoSqlBD
     Public Shared Function buscarEstudiantesTarea() As DataSet
         Dim st = "SELECT * FROM EstudiantesTareas"
         DataAdapter = New SqlDataAdapter(st, conexion)
-        DataSet.Clear()
+        DataSet = New DataSet
         DataAdapter.Fill(DataSet, "EstudiantesTareas")
         Return DataSet
     End Function
 
-    Public Shared Function buscarTareasProfesor(ByVal email As String) As DataSet
+    Public Shared Function buscarTareas() As DataSet
         Dim st = "SELECT * FROM TareasGenericas"
         DataAdapter = New SqlDataAdapter(st, conexion)
-        'DataSet.Clear()
+        DataSet = New DataSet
         DataAdapter.Fill(DataSet, "TareasGenericas")
         Return DataSet
     End Function
-
 End Class

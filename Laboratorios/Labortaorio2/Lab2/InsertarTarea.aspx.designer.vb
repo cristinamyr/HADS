@@ -41,6 +41,15 @@ Partial Public Class InsertarTarea
     Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
+    '''Control req_codigo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents req_codigo As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
     '''Control t_codigo.
     '''</summary>
     '''<remarks>
@@ -138,6 +147,24 @@ Partial Public Class InsertarTarea
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents GV_datos As Global.System.Web.UI.WebControls.SqlDataSource
+    
+    '''<summary>
+    '''Control RequiredFieldValidator1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents RequiredFieldValidator1 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+    
+    '''<summary>
+    '''Control req_desc.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents req_desc As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
     '''Control l_retroalimentacion.

@@ -36,7 +36,7 @@
 </head>
 <body style="height: 862px">
     <form id="form1" runat="server">
-        <asp:Panel ID="Panel1" runat="server" BackColor="#6699FF" BorderWidth="4px" CssClass="auto-style1" Height="854px">
+        <asp:Panel ID="Panel1" runat="server" BackColor="#6699FF" BorderWidth="4px" CssClass="auto-style1" Height="854px" Width="319px">
             <asp:Panel ID="Panel2" runat="server" BackColor="#33CCFF" BorderWidth="4px" CssClass="auto-style2">
                 <div class="auto-style4">
                     <span class="auto-style5"><strong>

@@ -108,6 +108,13 @@
             left: 193px;
             top: 625px;
         }
+        .auto-style18 {
+            width: 34px;
+            height: 39px;
+            position: absolute;
+            left: 505px;
+            top: 385px;
+        }
     </style>
 </head>
 <body>
@@ -143,6 +150,7 @@
                         <SortedDescendingHeaderStyle BackColor="#4870BE" />
                     </asp:GridView>
                     <asp:Label ID="l_retroalimentacion" runat="server" CssClass="auto-style17" Text="  "></asp:Label>
+                    <asp:RequiredFieldValidator ID="req_hreal" runat="server" ControlToValidate="t_hreal" CssClass="auto-style18" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </div>
             </asp:Panel>
         </div>
