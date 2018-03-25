@@ -82,4 +82,8 @@ Public Class ImportarXML
         End If
     End Sub
 
+    Protected Sub b_cerrarSesion_Click(sender As Object, e As EventArgs) Handles b_cerrarSesion.Click
+        Session.Abandon()
+        Response.Redirect("Inicio.aspx")
+    End Sub
 End Class
