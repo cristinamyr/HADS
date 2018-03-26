@@ -28,7 +28,6 @@ Public Class ImportarDataSet
     End Sub
 
     Protected Sub verTareas()
-        'data = New DataSet()
         If File.Exists(Server.MapPath("App_Data/" & ddl_asignaturas.SelectedValue & ".xml")) Then
             data.ReadXml(Server.MapPath("App_Data/" & ddl_asignaturas.SelectedValue & ".xml"))
             Dim columna As New DataColumn
