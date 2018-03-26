@@ -52,6 +52,20 @@
             left: 91px;
             top: 461px;
         }
+        .auto-style11 {
+            top: 778px;
+            left: 70px;
+            position: absolute;
+            width: 186px;
+        }
+        .auto-style12 {
+            width: 215px;
+            height: 55px;
+            position: absolute;
+            left: 1155px;
+            top: 28px;
+            font-size: large;
+        }
     </style>
 </head>
 <body>
@@ -70,7 +84,8 @@
                             <br />
                             Gestión Web de Tareas-Dedicación</strong></span><strong><br class="auto-style9" />
                             <br class="auto-style9" />
-                            </strong><span class="auto-style9"><strong>Profesores</strong></span></div>
+                            </strong><span class="auto-style9"><strong>Profesores</strong><asp:LinkButton ID="l_cerrarsesion" runat="server" CssClass="auto-style12">Cerrar sesión</asp:LinkButton>
+                            </span></div>
                     </asp:Panel>
                     <asp:HyperLink ID="h_asignaturas" runat="server" CssClass="auto-style5">Asignaturas</asp:HyperLink>
                     <asp:HyperLink ID="h_tareas" runat="server" CssClass="auto-style6" NavigateUrl="~/TareasProfesor.aspx">Tareas</asp:HyperLink>
@@ -78,7 +93,7 @@
                     <asp:HyperLink ID="h_Estadisticas" runat="server" CssClass="auto-style10" NavigateUrl="~/Estadisticas.aspx">Estadisticas</asp:HyperLink>
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/ImportarXML.aspx" style="top: 559px; left: 93px; position: absolute; height: 22px; width: 103px">Importar v. XMLDocument</asp:HyperLink>
                     <asp:HyperLink ID="HyperLink2" runat="server" style="top: 673px; left: 104px; position: absolute; height: 22px; width: 84px" NavigateUrl="~/ExportarXML.aspx">Exportar</asp:HyperLink>
-                    <asp:HyperLink ID="HyperLink3" runat="server" style="top: 778px; left: 70px; position: absolute; height: 22px; width: 159px">Importar v. Dataset (Opcional)</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink3" runat="server" CssClass="auto-style11" NavigateUrl="~/ImportarDataSet.aspx">Importar v. Dataset (Opcional)</asp:HyperLink>
                 </asp:Panel>
             </asp:Panel>
         </div>

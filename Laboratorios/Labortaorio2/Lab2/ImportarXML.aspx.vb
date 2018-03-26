@@ -12,22 +12,12 @@ Public Class ImportarXML
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
             conectarBD()
-            Dim ds = buscarTareas()
-            Dim dt = ds.Tables(0)
+            ds = buscarTareas()
+            dt = ds.Tables(0)
             Session.Contents("ds") = ds
         Else
             ds = Session.Contents("ds")
             dt = ds.Tables(0)
-        End If
-
-        If File.Exists(Server.MapPath("App_Data/" & ddl_asignaturas.SelectedValue & ".xml")) Then
-            Xml1.DocumentSource = Server.MapPath("App_Data/" & ddl_asignaturas.SelectedValue & ".xml")
-            Xml1.TransformSource = Server.MapPath("App_Data/XSLTFile.xsl")
-            b_importar.Enabled = True
-            l_retroalimentacion.Text = ""
-        Else
-            l_retroalimentacion.Text = "Esa asignatura no tiene el correspondiente XML para poder añadir asignaturas."
-            b_importar.Enabled = False
         End If
 
     End Sub
@@ -37,26 +27,27 @@ Public Class ImportarXML
         Dim dap As SqlDataAdapter
         dap = obtenerTodasLasTareas()
         Dim commandBuilder As New SqlCommandBuilder(dap)
+        Try
+            Dim xd As New XmlDocument
+            xd.Load(Server.MapPath("App_Data/" & ddl_asignaturas.SelectedValue & ".xml"))
+            Dim Tareas As XmlNodeList
+            Tareas = xd.GetElementsByTagName("tarea")
+            For Each tarea As XmlNode In Tareas
+                Dim nuevafila = dt.NewRow()
+                nuevafila("Codigo") = tarea.Attributes(0).Value
+                nuevafila("Descripcion") = tarea.ChildNodes(0).ChildNodes(0).Value
+                nuevafila("CodAsig") = ddl_asignaturas.SelectedValue
+                nuevafila("HEstimadas") = tarea.ChildNodes(1).ChildNodes(0).Value
+                nuevafila("Explotacion") = tarea.ChildNodes(2).ChildNodes(0).Value
+                nuevafila("TipoTarea") = tarea.ChildNodes(3).ChildNodes(0).Value
 
-        Dim xd As New XmlDocument
-        xd.Load(Server.MapPath("App_Data/" & ddl_asignaturas.SelectedValue & ".xml"))
-        Dim Tareas As XmlNodeList
-        Tareas = xd.GetElementsByTagName("tarea")
-        For Each tarea As XmlNode In Tareas
-            Dim nuevafila = dt.NewRow()
-            nuevafila("Codigo") = tarea.Attributes(0).Value
-            nuevafila("Descripcion") = tarea.ChildNodes(0).ChildNodes(0).Value
-            nuevafila("CodAsig") = ddl_asignaturas.SelectedValue
-            nuevafila("HEstimadas") = tarea.ChildNodes(1).ChildNodes(0).Value
-            nuevafila("Explotacion") = tarea.ChildNodes(2).ChildNodes(0).Value
-            nuevafila("TipoTarea") = tarea.ChildNodes(3).ChildNodes(0).Value
 
-            Try
                 dt.Rows.Add(nuevafila)
-            Catch ex As Exception
-                l_retroalimentacion.Text = "Solo se han insertado las tareas no repetidas."
-            End Try
-        Next
+
+            Next
+        Catch ex As Exception
+            l_retroalimentacion.Text = "Solo se han insertado las tareas no repetidas."
+        End Try
         Try
             dap.Update(ds, "TareasGenericas")
             ds.AcceptChanges()
@@ -68,22 +59,43 @@ Public Class ImportarXML
         If (l_retroalimentacion.Text = "") Then
             l_retroalimentacion.Text = "Tareas añadidas correctamente!"
         End If
-
     End Sub
 
-    Protected Sub ddl_asignaturas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddl_asignaturas.SelectedIndexChanged
+    Protected Sub verTareas(ByVal nombre As String)
         If File.Exists(Server.MapPath("App_Data/" & ddl_asignaturas.SelectedValue & ".xml")) Then
             Xml1.DocumentSource = Server.MapPath("App_Data/" & ddl_asignaturas.SelectedValue & ".xml")
-            Xml1.TransformSource = Server.MapPath("App_Data/XSLTFile.xsl")
+            Xml1.TransformSource = Server.MapPath("App_Data/" & nombre & ".xsl")
             b_importar.Enabled = True
+            l_retroalimentacion.Text = ""
         Else
             l_retroalimentacion.Text = "Esa asignatura no tiene el correspondiente XML para poder añadir asignaturas."
             b_importar.Enabled = False
         End If
     End Sub
 
+    Protected Sub ddl_asignaturas_DataBound(sender As Object, e As EventArgs) Handles ddl_asignaturas.DataBound
+        ddl_asignaturas.SelectedValue = ddl_asignaturas.Items.Item(0).Text
+        verTareas("XSLTFile")
+    End Sub
+
+    Protected Sub ddl_asignaturas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddl_asignaturas.SelectedIndexChanged
+        verTareas("XSLTFile")
+    End Sub
+
     Protected Sub b_cerrarSesion_Click(sender As Object, e As EventArgs) Handles b_cerrarSesion.Click
         Session.Abandon()
         Response.Redirect("Inicio.aspx")
+    End Sub
+
+    Protected Sub b_horas_Click(sender As Object, e As EventArgs) Handles b_horas.Click
+        verTareas("ordenHorasXSL")
+    End Sub
+
+    Protected Sub b_descr_Click(sender As Object, e As EventArgs) Handles b_descr.Click
+        verTareas("ordenDescripcionXSL")
+    End Sub
+
+    Protected Sub b_codigo_Click1(sender As Object, e As EventArgs) Handles b_codigo.Click
+        verTareas("ordenCodigoXSL")
     End Sub
 End Class

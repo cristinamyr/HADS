@@ -59,6 +59,24 @@ Partial Public Class ImportarXML
     Protected WithEvents b_importar As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
+    '''Control b_codigo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents b_codigo As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control b_horas.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents b_horas As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''Control Xml1.
     '''</summary>
     '''<remarks>
@@ -66,15 +84,6 @@ Partial Public Class ImportarXML
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents Xml1 As Global.System.Web.UI.WebControls.Xml
-    
-    '''<summary>
-    '''Control l_retroalimentacion.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents l_retroalimentacion As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''Control Label1.
@@ -102,4 +111,22 @@ Partial Public Class ImportarXML
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents h_menupral As Global.System.Web.UI.WebControls.HyperLink
+    
+    '''<summary>
+    '''Control l_retroalimentacion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents l_retroalimentacion As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control b_descr.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents b_descr As Global.System.Web.UI.WebControls.Button
 End Class

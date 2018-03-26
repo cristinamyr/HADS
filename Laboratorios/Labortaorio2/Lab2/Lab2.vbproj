@@ -51,6 +51,9 @@
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -113,6 +116,7 @@
     <Content Include="Confirmar.aspx" />
     <Content Include="Estadisticas.aspx" />
     <Content Include="ExportarXML.aspx" />
+    <Content Include="ImportarDataSet.aspx" />
     <Content Include="ImportarXML.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="InsertarTarea.aspx" />
@@ -164,6 +168,13 @@
     </Compile>
     <Compile Include="ExportarXML.aspx.vb">
       <DependentUpon>ExportarXML.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="ImportarDataSet.aspx.designer.vb">
+      <DependentUpon>ImportarDataSet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImportarDataSet.aspx.vb">
+      <DependentUpon>ImportarDataSet.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="ImportarXML.aspx.designer.vb">

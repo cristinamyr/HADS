@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class ExportarXML
+Partial Public Class ImportarDataSet
     
     '''<summary>
     '''Control form1.
@@ -32,15 +32,6 @@ Partial Public Class ExportarXML
     Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
     
     '''<summary>
-    '''Control h_menu.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents h_menu As Global.System.Web.UI.WebControls.HyperLink
-    
-    '''<summary>
     '''Control ddl_asignaturas.
     '''</summary>
     '''<remarks>
@@ -50,49 +41,13 @@ Partial Public Class ExportarXML
     Protected WithEvents ddl_asignaturas As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''Control asignaturas_datos.
+    '''Control datos_ddl.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents asignaturas_datos As Global.System.Web.UI.WebControls.SqlDataSource
-    
-    '''<summary>
-    '''Control tareas_view.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents tareas_view As Global.System.Web.UI.WebControls.GridView
-    
-    '''<summary>
-    '''Control b_exportarXML.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents b_exportarXML As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''Control b_expJson.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents b_expJson As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''Control Label1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents datos_ddl As Global.System.Web.UI.WebControls.SqlDataSource
     
     '''<summary>
     '''Control l_retroalimentacion.
@@ -104,11 +59,47 @@ Partial Public Class ExportarXML
     Protected WithEvents l_retroalimentacion As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control l_cerrarSesion.
+    '''Control b_importar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents l_cerrarSesion As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents b_importar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control tabla_asignaturas.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tabla_asignaturas As Global.System.Web.UI.WebControls.GridView
+    
+    '''<summary>
+    '''Control Label1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control b_cerrarSesion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents b_cerrarSesion As Global.System.Web.UI.WebControls.LinkButton
+    
+    '''<summary>
+    '''Control h_menupral.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents h_menupral As Global.System.Web.UI.WebControls.HyperLink
 End Class

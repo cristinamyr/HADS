@@ -26,15 +26,15 @@
             width: 238px;
             height: 87px;
             position: absolute;
-            left: 224px;
-            top: 383px;
+            left: 318px;
+            top: 385px;
         }
         .auto-style6 {
             width: 219px;
             height: 27px;
             position: absolute;
-            left: 101px;
-            top: 466px;
+            left: 57px;
+            top: 506px;
         }
         .auto-style8 {
             text-align: center;
@@ -62,6 +62,14 @@
             position: absolute;
             left: 49px;
             top: 204px;
+        }
+        .auto-style13 {
+            width: 238px;
+            height: 87px;
+            position: absolute;
+            left: 54px;
+            top: 385px;
+            right: 1398px;
         }
     </style>
 </head>
@@ -94,7 +102,8 @@
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
-        <asp:Button ID="b_exportarXML" runat="server" CssClass="auto-style3" Text="EXPORTAR XML" />
+        <asp:Button ID="b_exportarXML" runat="server" CssClass="auto-style13" Text="EXPORTAR XML" />
+        <asp:Button ID="b_expJson" runat="server" CssClass="auto-style3" Text="EXPORTAR JSON" />
         <asp:Label ID="Label1" runat="server" CssClass="auto-style12" Text="Selecciona la asignatura a ser exportada:"></asp:Label>
         <asp:Label ID="l_retroalimentacion" runat="server" CssClass="auto-style6" Text=" "></asp:Label>
         <asp:LinkButton ID="l_cerrarSesion" runat="server" CssClass="auto-style11">Cerrar sesión</asp:LinkButton>

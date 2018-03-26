@@ -1,6 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ImportarXML.aspx.vb" Inherits="Lab2.ImportarXML" %>
-
-<!DOCTYPE html>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ImportarDataSet.aspx.vb" Inherits="Lab2.ImportarDataSet" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -13,16 +11,6 @@
             position: absolute;
             height: 25px;
             width: 162px;
-        }
-        .auto-style2 {
-            width: 757px;
-            height: 27px;
-            position: absolute;
-            left: 60px;
-            top: 427px;
-        }
-        .auto-style3 {
-            margin-left: 920px;
         }
         .auto-style4 {
             text-align: center;
@@ -62,26 +50,18 @@
             font-size: x-small;
         }
         .auto-style11 {
-            height: 35px;
+            width: 289px;
+            height: 180px;
             position: absolute;
-            left: 38px;
-            top: 483px;
-            width: 204px;
-            margin-bottom: 38px;
+            left: 1000px;
+            top: 235px;
         }
         .auto-style12 {
-            width: 267px;
-            height: 35px;
+            width: 421px;
+            height: 27px;
             position: absolute;
-            left: 269px;
-            top: 482px;
-        }
-        .auto-style13 {
-            width: 223px;
-            height: 35px;
-            position: absolute;
-            left: 574px;
-            top: 484px;
+            left: 126px;
+            top: 420px;
         }
     </style>
 </head>
@@ -101,20 +81,25 @@
                 <asp:SessionParameter Name="email" SessionField="email" />
             </SelectParameters>
         </asp:SqlDataSource>
+            <asp:Label ID="l_retroalimentacion" runat="server" CssClass="auto-style12" Text=" "></asp:Label>
         <asp:Button ID="b_importar" runat="server" style="margin-top: 0px" Text="IMPORTAR (XMLD)" CssClass="auto-style7" />
-            <div class="auto-style3">
-                <asp:Button ID="b_codigo" runat="server" CssClass="auto-style11" Text="Ordenar por código" />
-                <asp:Button ID="b_horas" runat="server" CssClass="auto-style12" Text="Ordenar por horas estimadas" />
-                <asp:Xml ID="Xml1" runat="server"></asp:Xml>
-            </div>
+            <asp:GridView ID="tabla_asignaturas" runat="server" CellPadding="4" CssClass="auto-style11" ForeColor="#333333" GridLines="None">
+                <AlternatingRowStyle BackColor="White" />
+                <EditRowStyle BackColor="#7C6F57" />
+                <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#E3EAEB" />
+                <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                <SortedAscendingHeaderStyle BackColor="#246B61" />
+                <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                <SortedDescendingHeaderStyle BackColor="#15524A" />
+            </asp:GridView>
             <asp:Label ID="Label1" runat="server" CssClass="auto-style6" Text="Selecciona la asignatura de la que quieres importar las tareas:"></asp:Label>
             <asp:LinkButton ID="b_cerrarSesion" runat="server" CssClass="auto-style9">Cerrar sesión</asp:LinkButton>
             <asp:HyperLink ID="h_menupral" runat="server" CssClass="auto-style8" NavigateUrl="~/Profesores.aspx">Volver al menú principal</asp:HyperLink>
         </div>
-        <p>
-        <asp:Label ID="l_retroalimentacion" runat="server" CssClass="auto-style2" Text=" "></asp:Label>
-            </p>
-        <asp:Button ID="b_descr" runat="server" CssClass="auto-style13" Text="Ordenar por descripción" />
     </form>
 </body>
 </html>
