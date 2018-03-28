@@ -1,39 +1,39 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" standalone="yes"?>
 <tareas xmlns:eda1="http://ji.ehu.es/eda1">
   <tarea codigo="asd">
     <descripcion>asd</descripcion>
     <hestimadas>21</hestimadas>
-    <explotacion >0</explotacion>
+    <explotacion>true</explotacion>
     <tipotarea>Ejercicio</tipotarea>
   </tarea>
   <tarea codigo="EDA07-Ej1">
     <descripcion>Ejercicio sobre listas ligadas</descripcion>
     <hestimadas>3</hestimadas>
-    <explotacion >0</explotacion>
+    <explotacion>true</explotacion>
     <tipotarea>Ejercicio</tipotarea>
   </tarea>
   <tarea codigo="EDA13">
     <descripcion>examen</descripcion>
     <hestimadas>12</hestimadas>
-    <explotacion >0</explotacion>
+    <explotacion>true</explotacion>
     <tipotarea>Examen</tipotarea>
   </tarea>
   <tarea codigo="EX-123">
     <descripcion>examen</descripcion>
     <hestimadas>3</hestimadas>
-    <explotacion >0</explotacion>
+    <explotacion>true</explotacion>
     <tipotarea>Examen</tipotarea>
   </tarea>
   <tarea codigo="Examen EDA">
     <descripcion>EDA</descripcion>
     <hestimadas>4</hestimadas>
-    <explotacion >0</explotacion>
+    <explotacion>true</explotacion>
     <tipotarea>Ejercicio</tipotarea>
   </tarea>
   <tarea codigo="jjjjj">
     <descripcion>jjjjjjj</descripcion>
     <hestimadas>5</hestimadas>
-    <explotacion >0</explotacion>
+    <explotacion>true</explotacion>
     <tipotarea>Examen</tipotarea>
   </tarea>
 </tareas>

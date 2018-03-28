@@ -1,15 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" standalone="yes"?>
 <tareas xmlns:iso="http://ji.ehu.es/iso">
-  <tarea codigo="ISO-Lab1">
-    <descripcion>prueba</descripcion>
-    <hestimadas>12</hestimadas>
-    <explotacion />
-    <tipotarea>Ejercicio</tipotarea>
+  <tarea Codigo="ISO-Lab1">
+    <Descripcion>prueba</Descripcion>
+    <HEstimadas>12</HEstimadas>
+    <Explotacion>true</Explotacion>
+    <TipoTarea>Ejercicio</TipoTarea>
   </tarea>
-  <tarea codigo="NuevaTareaa">
-    <descripcion>nueva tarea</descripcion>
-    <hestimadas>2</hestimadas>
-    <explotacion >False</explotacion>
-    <tipotarea>Ejercicio</tipotarea>
+  <tarea Codigo="NuevaTareaa">
+    <Descripcion>nueva tarea</Descripcion>
+    <HEstimadas>2</HEstimadas>
+    <Explotacion>false</Explotacion>
+    <TipoTarea>Ejercicio</TipoTarea>
   </tarea>
 </tareas>

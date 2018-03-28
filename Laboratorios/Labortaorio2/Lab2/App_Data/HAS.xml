@@ -3,7 +3,7 @@
   <tarea codigo="Tarea nueva, no existe">
     <descripcion>Esta tarea no existe en la base de datos</descripcion>
     <hestimadas>0</hestimadas>
-    <explotacion>False</explotacion>/>
+    <explotacion>false</explotacion>/>
     <tipotarea>Examen</tipotarea>
   </tarea>
 </tareas>

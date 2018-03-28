@@ -15,30 +15,27 @@ Public Class ExportarXML
     End Sub
 
     Protected Sub b_exportarXML_Click(sender As Object, e As EventArgs) Handles b_exportarXML.Click
+        verTareas()
+        Dim datast As New DataSet
+        Dim datatab As New DataTable
+        datatab = dataView.ToTable
+        datatab.Columns.Remove("CodAsig")
+        datatab.Columns(0).ColumnMapping = MappingType.Attribute
+        datatab.TableName = "tarea"
+        For Each col As DataColumn In datatab.Columns
+            col.ColumnName = col.ColumnName.ToLower
+        Next
+        datast.Tables.Add(datatab)
+        datast.DataSetName = "tareas"
+
+        datast.WriteXml(Server.MapPath("App_Data/" & ddl_asignaturas.SelectedValue & ".xml"))
+
         Dim xd As New XmlDocument
-        Try
-            Using writer As XmlWriter = XmlWriter.Create(Server.MapPath("App_Data/" & ddl_asignaturas.SelectedValue & ".xml"))
-                writer.WriteStartDocument()
-                writer.WriteStartElement("tareas")
-                For Each row As GridViewRow In tareas_view.Rows
-                    writer.WriteStartElement("tarea")
-                    writer.WriteAttributeString("codigo", row.Cells(0).Text)
-                    writer.WriteElementString("descripcion", row.Cells(1).Text)
-                    writer.WriteElementString("hestimadas", row.Cells(3).Text)
-                    writer.WriteElementString("explotacion", row.Cells(4).Text)
-                    writer.WriteElementString("tipotarea", row.Cells(5).Text)
-                    writer.WriteEndElement()
-                Next
-                writer.WriteEndElement()
-                writer.WriteEndDocument()
-            End Using
-            xd.Load(Server.MapPath("App_Data/" & ddl_asignaturas.SelectedValue & ".xml"))
-            xd.DocumentElement.SetAttribute("xmlns:" & ddl_asignaturas.SelectedValue.ToLower, "http://ji.ehu.es/" & ddl_asignaturas.SelectedValue.ToLower)
-            xd.Save((Server.MapPath("./App_Data/" & ddl_asignaturas.SelectedValue & ".xml")))
-            l_retroalimentacion.Text = "Exportación completada."
-        Catch ex As Exception
-            l_retroalimentacion.Text = "Ha habido algún problema con la exportación. --> " + ex.Message
-        End Try
+        xd.Load(Server.MapPath("App_Data/" & ddl_asignaturas.SelectedValue & ".xml"))
+        xd.DocumentElement.SetAttribute("xmlns:" & ddl_asignaturas.SelectedValue.ToLower, "http://ji.ehu.es/" & ddl_asignaturas.SelectedValue.ToLower)
+        xd.Save((Server.MapPath("./App_Data/" & ddl_asignaturas.SelectedValue & ".xml")))
+        l_retroalimentacion.Text = "Exportación completada."
+
 
     End Sub
 
