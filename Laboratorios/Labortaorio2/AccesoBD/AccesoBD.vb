@@ -19,12 +19,6 @@ Public Class AccesoBD
         conexion.Close()
     End Sub
 
-    Public Shared Function mostrarpass(ByVal email As String) As String
-        Dim st = "Select pass from Usuarios where email = '" & email & "'"
-        comando = New SqlClient.SqlCommand(st, conexion)
-        Return comando.ExecuteScalar()
-    End Function
-
     Public Shared Function buscar(ByVal email As String) As Integer
         Dim st = "Select count(*) from Usuarios where email = '" & email & "'"
         comando = New SqlClient.SqlCommand(st, conexion)
@@ -51,11 +45,8 @@ Public Class AccesoBD
 
     Public Shared Function buscarRegistro(ByVal email As String, ByVal pass As String) As Integer
         pass = Cifrar(pass)
-        MsgBox(pass & " -> pass introducido")
         Dim st = "Select count(*) from Usuarios where email = '" & email & "' and pass = '" & pass & "'"
-        MsgBox(st)
         comando = New SqlClient.SqlCommand(st, conexion)
-        MsgBox("Resultado petición: " & comando.ExecuteScalar())
         buscarRegistro = comando.ExecuteScalar()
     End Function
 
@@ -110,6 +101,12 @@ Public Class AccesoBD
         Return comando.ExecuteScalar()
     End Function
 
+    Public Shared Function obtenerRol(ByVal email As String) As Integer
+        Dim st = "Select tipo from Usuarios where email = '" & email & "'"
+        comando = New SqlClient.SqlCommand(st, conexion)
+        Return comando.ExecuteScalar()
+    End Function
+
 
     Public Shared Function confirmarCodigo(ByVal email As String, ByVal codigo As Integer) As Integer
         If cumpleCaracteristicas(email, codigo) Then
@@ -118,22 +115,6 @@ Public Class AccesoBD
         Return 0
     End Function
 
-    Public Shared Function esAlumno(ByVal email As String) As Integer
-        Dim resultado As SqlDataReader
-        Dim tipo As String = ""
-        Dim st = "SELECT tipo FROM Usuarios WHERE email = '" & email & "'"
-        comando = New SqlClient.SqlCommand(st, conexion)
-        resultado = comando.ExecuteReader
-        While resultado.Read
-            tipo = resultado.Item("tipo")
-        End While
-        resultado.Close()
-        If (tipo = "Alumno") Then
-            Return 1
-        Else
-            Return 0
-        End If
-    End Function
 
     Public Shared Function obtenerTodasLasTareas() As SqlDataAdapter
         Dim st = "SELECT * FROM TareasGenericas"

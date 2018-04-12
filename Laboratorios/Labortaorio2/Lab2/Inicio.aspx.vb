@@ -19,23 +19,26 @@ Public Class FormularioWeb
         If t_pass.Text = "" Then
             l_iniciarSesion.Text = "Debes introducir una contraseña"
         Else
-            Dim sol As String
-            sol = mostrarpass(t_email.Text)
-            MsgBox(sol)
             resultado = buscarRegistro(t_email.Text, t_pass.Text)
             If resultado = 1 Then
                 If estaConfirmado(t_email.Text) Then
                     Session.Contents("email") = t_email.Text
-                    If esAlumno(t_email.Text) Then
+                    Dim rol As String
+                    rol = obtenerRol(t_email.Text)
+                    If (rol = "Alumno") Then
                         System.Web.Security.FormsAuthentication.SetAuthCookie("alumnos", False)
                         Response.Redirect("Alumnos/Alumnos.aspx")
-                    Else
+                    ElseIf (rol = "Profesor") Then
+
                         If (t_email.Text = "vadillo@ehu.es") Then
                             System.Web.Security.FormsAuthentication.SetAuthCookie("vadillo", False)
                         Else
                             System.Web.Security.FormsAuthentication.SetAuthCookie("profesores", False)
                         End If
                         Response.Redirect("Profesores/Profesores.aspx")
+                    Else
+                        System.Web.Security.FormsAuthentication.SetAuthCookie("admin", False)
+                        Response.Redirect("Admin/Admin.aspx")
                     End If
                 Else
                     l_iniciarSesion.Text = "No has confirmado tu cuenta. Si no tienes el enlace de confirmación pulsa "
@@ -60,7 +63,6 @@ Public Class FormularioWeb
     End Sub
 
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        l_iniciarSesion.Text = Cifrar(t_pass.Text) & mostrarpass(t_email.Text)
-
+        l_iniciarSesion.Text = Cifrar(t_pass.Text)
     End Sub
 End Class
