@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Security.Cryptography
 
 Public Class AccesoBD
     Private Shared conexion As New SqlClient.SqlConnection
@@ -132,6 +133,22 @@ Public Class AccesoBD
         Dim st = "SELECT * FROM EstudiantesTareas"
         Dim tareasDataAdapter = New SqlDataAdapter(st, conexion)
         Return tareasDataAdapter
+    End Function
+
+    Public Function Cifrar(ByVal pass As String) As String
+        Dim strEncriptar As String = ""
+        Dim ue As New System.Text.UTF8Encoding
+        Dim password(), ByteCifrar() As Byte
+        Dim sec As New RSACryptoServiceProvider
+        Try
+            password = ue.GetBytes(pass)
+            ByteCifrar = sec.Encrypt(password, False)
+            strEncriptar = Convert.ToBase64String(ByteCifrar)
+            MsgBox(strEncriptar)
+        Catch ex As Exception
+            MsgBox("No se ha realizado el cifrado " & ex.Message)
+        End Try
+        Return strEncriptar
     End Function
 
 End Class
