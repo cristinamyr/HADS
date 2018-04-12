@@ -19,6 +19,12 @@ Public Class AccesoBD
         conexion.Close()
     End Sub
 
+    Public Shared Function mostrarpass(ByVal email As String) As String
+        Dim st = "Select pass from Usuarios where email = '" & email & "'"
+        comando = New SqlClient.SqlCommand(st, conexion)
+        Return comando.ExecuteScalar()
+    End Function
+
     Public Shared Function buscar(ByVal email As String) As Integer
         Dim st = "Select count(*) from Usuarios where email = '" & email & "'"
         comando = New SqlClient.SqlCommand(st, conexion)
@@ -26,6 +32,7 @@ Public Class AccesoBD
     End Function
 
     Public Shared Function insertar(ByVal nombre As String, ByVal apellidos As String, ByVal email As String, ByVal contrasena As String, ByVal rol As String, ByVal NumConf As Integer) As Tuple(Of String, Integer)
+        contrasena = Cifrar(contrasena)
         If (buscar(email) = 0) Then
             Dim st = "insert into Usuarios (email,nombre,apellidos,numconfir,confirmado,tipo,pass ) values ('" & email & "','" & nombre & "','" & apellidos & "','" & NumConf & "','" & 0 & "','" & rol & "','" & contrasena & "')"
             Dim numregs As Integer
@@ -43,8 +50,12 @@ Public Class AccesoBD
     End Function
 
     Public Shared Function buscarRegistro(ByVal email As String, ByVal pass As String) As Integer
+        pass = Cifrar(pass)
+        MsgBox(pass & " -> pass introducido")
         Dim st = "Select count(*) from Usuarios where email = '" & email & "' and pass = '" & pass & "'"
+        MsgBox(st)
         comando = New SqlClient.SqlCommand(st, conexion)
+        MsgBox("Resultado petición: " & comando.ExecuteScalar())
         buscarRegistro = comando.ExecuteScalar()
     End Function
 
@@ -57,6 +68,7 @@ Public Class AccesoBD
     Public Shared Function cambiarPass(ByVal email As String, ByVal pass As String) As String
         Dim numRegs As Integer
         If buscar(email) Then
+            pass = Cifrar(pass)
             Dim st = "Update Usuarios set pass = '" & pass & "' where email='" & email & "'"
             comando = New SqlClient.SqlCommand(st, conexion)
             Try
@@ -135,16 +147,16 @@ Public Class AccesoBD
         Return tareasDataAdapter
     End Function
 
-    Public Function Cifrar(ByVal pass As String) As String
+    Public Shared Function Cifrar(ByVal pass As String) As String
         Dim strEncriptar As String = ""
         Dim ue As New System.Text.UTF8Encoding
         Dim password(), ByteCifrar() As Byte
-        Dim sec As New RSACryptoServiceProvider
+        Dim sec As New MD5CryptoServiceProvider
         Try
             password = ue.GetBytes(pass)
-            ByteCifrar = sec.Encrypt(password, False)
+            ByteCifrar = sec.ComputeHash(password)
             strEncriptar = Convert.ToBase64String(ByteCifrar)
-            MsgBox(strEncriptar)
+            'MsgBox(strEncriptar)
         Catch ex As Exception
             MsgBox("No se ha realizado el cifrado " & ex.Message)
         End Try

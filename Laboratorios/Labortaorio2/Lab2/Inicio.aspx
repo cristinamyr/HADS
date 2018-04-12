@@ -108,6 +108,7 @@
             <tr>
                 <td class="auto-style7" colspan="2">
                     <asp:Label ID="l_conexion" runat="server" Text="         "></asp:Label>
+                    <asp:Button ID="Button1" runat="server" Text="Button" />
                 </td>
             </tr>
             <tr>
