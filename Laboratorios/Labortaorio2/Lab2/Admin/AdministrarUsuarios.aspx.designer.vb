@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Admin
+Partial Public Class AdministrarUsuarios
     
     '''<summary>
     '''Control form1.
@@ -32,13 +32,13 @@ Partial Public Class Admin
     Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
     
     '''<summary>
-    '''Control Panel2.
+    '''Control b_cerrarSesion.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Panel2 As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents b_cerrarSesion As Global.System.Web.UI.WebControls.LinkButton
     
     '''<summary>
     '''Control HyperLink1.
@@ -50,11 +50,20 @@ Partial Public Class Admin
     Protected WithEvents HyperLink1 As Global.System.Web.UI.WebControls.HyperLink
     
     '''<summary>
-    '''Control LinkButton1.
+    '''Control GridView1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents LinkButton1 As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
+    
+    '''<summary>
+    '''Control source_gview.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents source_gview As Global.System.Web.UI.WebControls.SqlDataSource
 End Class

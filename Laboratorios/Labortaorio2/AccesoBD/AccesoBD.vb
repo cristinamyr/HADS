@@ -101,7 +101,7 @@ Public Class AccesoBD
         Return comando.ExecuteScalar()
     End Function
 
-    Public Shared Function obtenerRol(ByVal email As String) As Integer
+    Public Shared Function obtenerRol(ByVal email As String) As String
         Dim st = "Select tipo from Usuarios where email = '" & email & "'"
         comando = New SqlClient.SqlCommand(st, conexion)
         Return comando.ExecuteScalar()
