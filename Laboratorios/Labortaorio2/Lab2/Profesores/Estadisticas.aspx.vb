@@ -8,6 +8,7 @@
     Protected Sub LinkButton1_Click(sender As Object, e As EventArgs) Handles LinkButton1.Click
         Session.RemoveAll()
         Session.Abandon()
+        System.Web.Security.FormsAuthentication.SignOut()
         Response.Redirect("Inicio.aspx")
     End Sub
 End Class

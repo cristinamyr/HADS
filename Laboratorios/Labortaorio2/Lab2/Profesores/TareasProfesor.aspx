@@ -70,7 +70,7 @@
                     <span class="auto-style2"><strong>
                     <br />
                     </strong>
-                    <asp:HyperLink ID="HyperLink1" runat="server" CssClass="auto-style10" NavigateUrl="~/Profesores.aspx">Volver al menú principal</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink1" runat="server" CssClass="auto-style10" NavigateUrl="~/Profesores/Profesores.aspx">Volver al menú principal</asp:HyperLink>
                     <strong>PROFESOR</strong></span><strong><br class="auto-style2" /> </strong><span class="auto-style2"><strong>GESTIÓN DE TAREAS GENÉRICAS</strong><asp:LinkButton ID="b_cerrarSesion" runat="server" CssClass="auto-style5" Font-Size="Large">Cerrar sesión</asp:LinkButton>
                     </span>
                     <asp:Label ID="Label1" runat="server" CssClass="auto-style6" Text="Seleccionar asignatura:"></asp:Label>

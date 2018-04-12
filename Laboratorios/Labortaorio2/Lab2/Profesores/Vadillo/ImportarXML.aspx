@@ -109,7 +109,7 @@
             </div>
             <asp:Label ID="Label1" runat="server" CssClass="auto-style6" Text="Selecciona la asignatura de la que quieres importar las tareas:"></asp:Label>
             <asp:LinkButton ID="b_cerrarSesion" runat="server" CssClass="auto-style9">Cerrar sesión</asp:LinkButton>
-            <asp:HyperLink ID="h_menupral" runat="server" CssClass="auto-style8" NavigateUrl="~/Profesores.aspx">Volver al menú principal</asp:HyperLink>
+            <asp:HyperLink ID="h_menupral" runat="server" CssClass="auto-style8" NavigateUrl="~/Profesores/Profesores.aspx">Volver al menú principal</asp:HyperLink>
         </div>
         <p>
         <asp:Label ID="l_retroalimentacion" runat="server" CssClass="auto-style2" Text=" "></asp:Label>

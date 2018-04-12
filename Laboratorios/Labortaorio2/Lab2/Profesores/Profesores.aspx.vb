@@ -7,6 +7,7 @@
 
     Protected Sub l_cerrarsesion_Click(sender As Object, e As EventArgs) Handles l_cerrarsesion.Click
         Session.Abandon()
+        System.Web.Security.FormsAuthentication.SignOut()
         Response.Redirect("Inicio.aspx")
     End Sub
 End Class

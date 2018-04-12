@@ -42,6 +42,7 @@ Public Class TareasAlumnos
     Protected Sub l_cerrarSesion_Click(sender As Object, e As EventArgs) Handles l_cerrarSesion.Click
         Session.RemoveAll()
         Session.Abandon()
+        System.Web.Security.FormsAuthentication.SignOut()
         Response.Redirect("Inicio.aspx")
     End Sub
 

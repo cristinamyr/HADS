@@ -78,7 +78,7 @@
         <div>
             <asp:Panel ID="Panel1" runat="server" BackColor="#99FFCC" Height="111px">
                 <div class="auto-style8">
-                    <span class="auto-style9">PROFESORES</span><br class="auto-style9" /> <span class="auto-style9">Exportación de tareas a documentos XML</span><asp:HyperLink ID="h_menu" runat="server" CssClass="auto-style10" NavigateUrl="~/Profesores.aspx">Volver al menú principal</asp:HyperLink>
+                    <span class="auto-style9">PROFESORES</span><br class="auto-style9" /> <span class="auto-style9">Exportación de tareas a documentos XML</span><asp:HyperLink ID="h_menu" runat="server" CssClass="auto-style10" NavigateUrl="~/Profesores/Profesores.aspx">Volver al menú principal</asp:HyperLink>
                 </div>
             </asp:Panel>
         </div>

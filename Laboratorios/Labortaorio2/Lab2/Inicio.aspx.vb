@@ -24,9 +24,15 @@ Public Class FormularioWeb
                 If estaConfirmado(t_email.Text) Then
                     Session.Contents("email") = t_email.Text
                     If esAlumno(t_email.Text) Then
-                        Response.Redirect("Alumnos.aspx")
+                        System.Web.Security.FormsAuthentication.SetAuthCookie("alumnos", False)
+                        Response.Redirect("Alumnos/Alumnos.aspx")
                     Else
-                        Response.Redirect("Profesores.aspx")
+                        If (t_email.Text = "vadillo@ehu.es") Then
+                            System.Web.Security.FormsAuthentication.SetAuthCookie("vadillo", False)
+                        Else
+                            System.Web.Security.FormsAuthentication.SetAuthCookie("profesores", False)
+                        End If
+                        Response.Redirect("Profesores/Profesores.aspx")
                     End If
                 Else
                     l_iniciarSesion.Text = "No has confirmado tu cuenta. Si no tienes el enlace de confirmación pulsa "

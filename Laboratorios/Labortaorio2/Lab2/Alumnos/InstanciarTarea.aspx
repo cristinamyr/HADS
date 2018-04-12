@@ -135,7 +135,7 @@
                     <asp:TextBox ID="t_tarea" runat="server" CssClass="auto-style11" Enabled="False"></asp:TextBox>
                     <asp:TextBox ID="t_hest" runat="server" CssClass="auto-style12" Enabled="False"></asp:TextBox>
                     <asp:TextBox ID="t_hreal" runat="server" CssClass="auto-style13"></asp:TextBox>
-                    <asp:HyperLink ID="h_volver" runat="server" CssClass="auto-style14" NavigateUrl="~/TareasAlumnos.aspx">Ver Tareas</asp:HyperLink>
+                    <asp:HyperLink ID="h_volver" runat="server" CssClass="auto-style14" NavigateUrl="~/Alumnos/TareasAlumnos.aspx">Ver Tareas</asp:HyperLink>
                     <asp:GridView ID="TareasAlumno" runat="server" CssClass="auto-style16" CellPadding="4" ForeColor="#333333" GridLines="None">
                         <AlternatingRowStyle BackColor="White" />
                         <EditRowStyle BackColor="#2461BF" />

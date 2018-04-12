@@ -43,7 +43,7 @@
                 <span><strong>
                 <br class="auto-style4" />
                 </strong>
-                <asp:HyperLink ID="HyperLink1" runat="server" CssClass="auto-style6" NavigateUrl="~/Alumnos.aspx">Volver al menú inicial</asp:HyperLink>
+                <asp:HyperLink ID="HyperLink1" runat="server" CssClass="auto-style6" NavigateUrl="~/Alumnos/Alumnos.aspx">Volver al menú inicial</asp:HyperLink>
                 </span><strong><span class="auto-style4">ALUMNOS</span><br class="auto-style4" /> </strong><span class="auto-style4"><strong>GESTIÓN DE TAREAS GENÉRICAS </strong></span>
             </asp:Panel>
         </div>

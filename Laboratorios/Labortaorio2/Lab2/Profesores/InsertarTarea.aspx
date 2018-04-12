@@ -156,7 +156,7 @@
                     <asp:DropDownList ID="ddl_tipoTarea" runat="server" CssClass="auto-style12" DataSourceID="tipoTarea_datos" DataTextField="TipoTarea" DataValueField="TipoTarea">
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="tipoTarea_datos" runat="server" ConnectionString="<%$ ConnectionStrings:HADS10-TAREASConnectionString %>" SelectCommand="SELECT DISTINCT [TipoTarea] FROM [TareasGenericas]"></asp:SqlDataSource>
-                    <asp:HyperLink ID="l_volver" runat="server" CssClass="auto-style15" NavigateUrl="~/TareasProfesor.aspx">Ver tareas</asp:HyperLink>
+                    <asp:HyperLink ID="l_volver" runat="server" CssClass="auto-style15" NavigateUrl="~/Profesores/TareasProfesor.aspx">Ver tareas</asp:HyperLink>
                     <asp:GridView ID="GridView1" runat="server" CellPadding="4" CssClass="auto-style14" ForeColor="#333333" GridLines="None" DataSourceID="GV_datos">
                         <AlternatingRowStyle BackColor="White" />
                         <EditRowStyle BackColor="#7C6F57" />

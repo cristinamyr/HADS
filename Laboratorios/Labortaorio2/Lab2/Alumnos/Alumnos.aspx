@@ -48,7 +48,7 @@
                     <br />
                     Gestión Web de Tareas-Dedicación</strong></span><strong><br class="auto-style5" /> </strong><span class="auto-style5"><strong>Alumnos</strong></span></div>
             </asp:Panel>
-            <asp:HyperLink ID="h_tareas" runat="server" CssClass="auto-style3" Font-Size="Large" NavigateUrl="~/TareasAlumnos.aspx">Tareas Genéricas</asp:HyperLink>
+            <asp:HyperLink ID="h_tareas" runat="server" CssClass="auto-style3" Font-Size="Large" NavigateUrl="~/Alumnos/TareasAlumnos.aspx">Tareas Genéricas</asp:HyperLink>
         </asp:Panel>
     </form>
 </body>
