@@ -18,7 +18,6 @@
         }
         .auto-style5 {
             width: 232px;
-            height: 31px;
             position: absolute;
             left: 1378px;
             top: 45px;

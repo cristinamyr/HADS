@@ -55,7 +55,7 @@ Public Class ImportarDataSet
 
     Protected Sub b_cerrarSesion_Click(sender As Object, e As EventArgs) Handles b_cerrarSesion.Click
         Session.Abandon()
-        Response.Redirect("Inicio.aspx")
+        System.Web.Security.FormsAuthentication.SignOut()
     End Sub
 
     Protected Sub b_importar_Click(sender As Object, e As EventArgs) Handles b_importar.Click

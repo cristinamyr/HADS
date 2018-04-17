@@ -9,6 +9,5 @@
         Session.RemoveAll()
         Session.Abandon()
         System.Web.Security.FormsAuthentication.SignOut()
-        Response.Redirect("Inicio.aspx")
     End Sub
 End Class

@@ -62,6 +62,6 @@ Public Class InstanciarTarea
 
     Protected Sub lb_cerrarSesion_Click(sender As Object, e As EventArgs) Handles lb_cerrarSesion.Click
         Session.Abandon()
-        Response.Redirect("Inicio.aspx")
+        System.Web.Security.FormsAuthentication.SignOut()
     End Sub
 End Class

@@ -12,7 +12,6 @@
     Protected Sub b_cerrarSesion_Click(sender As Object, e As EventArgs) Handles b_cerrarSesion.Click
         Session.Abandon()
         System.Web.Security.FormsAuthentication.SignOut()
-        Response.Redirect("Inicio.aspx")
     End Sub
 
     Protected Sub ddl_datos_Selecting(sender As Object, e As SqlDataSourceSelectingEventArgs)

@@ -68,7 +68,7 @@ Public Class ExportarXML
 
     Protected Sub l_cerrarSesion_Click(sender As Object, e As EventArgs) Handles l_cerrarSesion.Click
         Session.Abandon()
-        Response.Redirect("Inicio.aspx")
+        System.Web.Security.FormsAuthentication.SignOut()
     End Sub
 
     Protected Sub b_expJson_Click(sender As Object, e As EventArgs) Handles b_expJson.Click

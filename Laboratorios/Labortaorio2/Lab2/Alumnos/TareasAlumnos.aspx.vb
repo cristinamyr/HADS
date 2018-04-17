@@ -43,7 +43,6 @@ Public Class TareasAlumnos
         Session.RemoveAll()
         Session.Abandon()
         System.Web.Security.FormsAuthentication.SignOut()
-        Response.Redirect("Inicio.aspx")
     End Sub
 
     Protected Sub TablaAlumnos_Sorting(sender As Object, e As GridViewSortEventArgs) Handles tablaAlumnos.Sorting
