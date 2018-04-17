@@ -29,7 +29,6 @@ Public Class FormularioWeb
                         System.Web.Security.FormsAuthentication.SetAuthCookie("alumnos", False)
                         Response.Redirect("Alumnos/Alumnos.aspx")
                     ElseIf (rol = "Profesor") Then
-
                         If (t_email.Text = "vadillo@ehu.es") Then
                             System.Web.Security.FormsAuthentication.SetAuthCookie("vadillo", False)
                         Else
@@ -62,7 +61,4 @@ Public Class FormularioWeb
         enviarEmail(email, asunto, mensaje)
     End Sub
 
-    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        l_iniciarSesion.Text = Cifrar(t_pass.Text)
-    End Sub
 End Class
