@@ -116,6 +116,7 @@
       <CustomToolNamespace>Cambiar Contraseña</CustomToolNamespace>
     </Content>
     <Content Include="Confirmar.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="Profesores\Estadisticas.aspx" />
     <Content Include="Profesores\Vadillo\ExportarXML.aspx" />
     <Content Include="Profesores\Vadillo\ImportarDataSet.aspx" />
@@ -171,6 +172,9 @@
     <Compile Include="Confirmar.aspx.vb">
       <DependentUpon>Confirmar.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Profesores\Estadisticas.aspx.designer.vb">
       <DependentUpon>Estadisticas.aspx</DependentUpon>

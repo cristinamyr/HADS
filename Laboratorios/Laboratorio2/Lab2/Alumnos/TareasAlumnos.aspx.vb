@@ -40,8 +40,9 @@ Public Class TareasAlumnos
     End Sub
 
     Protected Sub l_cerrarSesion_Click(sender As Object, e As EventArgs) Handles l_cerrarSesion.Click
-        Session.RemoveAll()
         Session.Abandon()
+        Application.Contents("numAlumns") = Application.Contents("numAlumns") - 1
+        Application.Contents("emailAlumnos").Items.Remove(Session.Contents("email"))
         System.Web.Security.FormsAuthentication.SignOut()
     End Sub
 

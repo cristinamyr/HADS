@@ -50,6 +50,21 @@
             </asp:Panel>
             <asp:HyperLink ID="h_tareas" runat="server" CssClass="auto-style3" Font-Size="Large" NavigateUrl="~/Alumnos/TareasAlumnos.aspx">Tareas Genéricas</asp:HyperLink>
         </asp:Panel>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <asp:Timer ID="Timer1"  OnTick="Timer1_Tick" runat="server" Interval="10000">
+        </asp:Timer>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
+            </Triggers>
+            <ContentTemplate>
+                Profesores conectados:
+                <asp:Label ID="Label1" runat="server"></asp:Label>
+                &nbsp;<br /> Alumnos conectados:
+                <asp:Label ID="Label2" runat="server"></asp:Label>
+            </ContentTemplate>
+        </asp:UpdatePanel>
     </form>
 </body>
 </html>

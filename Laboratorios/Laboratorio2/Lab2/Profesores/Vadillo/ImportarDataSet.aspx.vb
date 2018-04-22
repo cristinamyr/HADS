@@ -55,6 +55,8 @@ Public Class ImportarDataSet
 
     Protected Sub b_cerrarSesion_Click(sender As Object, e As EventArgs) Handles b_cerrarSesion.Click
         Session.Abandon()
+        Application.Contents("numProfes") = Application.Contents("numProfes") - 1
+        Application.Contents("emailProfes").Items.Remove(Session.Contents("email"))
         System.Web.Security.FormsAuthentication.SignOut()
     End Sub
 

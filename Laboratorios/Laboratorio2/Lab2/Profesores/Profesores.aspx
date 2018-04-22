@@ -93,9 +93,28 @@
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Profesores/Vadillo/ImportarXML.aspx" style="top: 559px; left: 93px; position: absolute; height: 22px; width: 103px">Importar v. XMLDocument</asp:HyperLink>
                     <asp:HyperLink ID="HyperLink2" runat="server" style="top: 673px; left: 104px; position: absolute; height: 22px; width: 84px" NavigateUrl="~/Profesores/Vadillo/ExportarXML.aspx">Exportar</asp:HyperLink>
                     <asp:HyperLink ID="HyperLink3" runat="server" CssClass="auto-style11" NavigateUrl="~/Profesores/Vadillo/ImportarDataSet.aspx">Importar v. Dataset (Opcional)</asp:HyperLink>
+                    <br />
+                    <br />
                 </asp:Panel>
             </asp:Panel>
         </div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <br />
+        <asp:Timer ID="Timer1"  OnTick="Timer1_Tick" runat="server" Interval="10000">
+        </asp:Timer>
+        <br />
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+             <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
+            </Triggers>
+            <ContentTemplate>
+                Profesores conectados:
+                <asp:Label ID="Label1" runat="server"></asp:Label>
+                &nbsp;<br /> Alumnos conectados:
+                <asp:Label ID="Label2" runat="server"></asp:Label>
+            </ContentTemplate>
+        </asp:UpdatePanel>
     </form>
 </body>
 </html>

@@ -26,9 +26,13 @@ Public Class FormularioWeb
                     Dim rol As String
                     rol = obtenerRol(t_email.Text)
                     If (rol = "Alumno") Then
+                        Application.Contents("numAlumns") = Application.Contents("numAlumns") + 1
+                        Application.Contents("emailAlumnos").Items.add(t_email.Text)
                         System.Web.Security.FormsAuthentication.SetAuthCookie("alumnos", False)
                         Response.Redirect("Alumnos/Alumnos.aspx")
                     ElseIf (rol = "Profesor") Then
+                        Application.Contents("numProfes") = Application.Contents("numProfes") + 1
+                        Application.Contents("emailProfes").Items.add(t_email.Text)
                         If (t_email.Text = "vadillo@ehu.es") Then
                             System.Web.Security.FormsAuthentication.SetAuthCookie("vadillo", False)
                         Else
