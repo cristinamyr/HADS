@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Profesores.aspx.vb" Inherits="Lab2.TareasProfesor" %>
 
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="ajaxToolkit" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -115,6 +117,16 @@
                 <asp:Label ID="Label2" runat="server"></asp:Label>
             </ContentTemplate>
         </asp:UpdatePanel>
+        <ajaxToolkit:UpdatePanelAnimationExtender ID="UpdatePanel1_UpdatePanelAnimationExtender" runat="server" BehaviorID="UpdatePanel1_UpdatePanelAnimationExtender" TargetControlID="UpdatePanel1">
+            <Animations>
+                <OnUpdated>
+                        <Sequence>
+                            <FadeIn AnimationTarget="UpdatePanel1" maximumOpacity="1.0" />
+                            <EnableAction Enabled="true" />
+                        </Sequence>
+                </OnUpdated>
+            </Animations>
+        </ajaxToolkit:UpdatePanelAnimationExtender>
     </form>
 </body>
 </html>

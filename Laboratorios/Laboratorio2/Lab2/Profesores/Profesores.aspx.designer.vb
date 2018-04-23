@@ -165,4 +165,13 @@ Partial Public Class TareasProfesor
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control UpdatePanel1_UpdatePanelAnimationExtender.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents UpdatePanel1_UpdatePanelAnimationExtender As Global.AjaxControlToolkit.UpdatePanelAnimationExtender
 End Class
