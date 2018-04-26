@@ -7,7 +7,7 @@ Public Class Global_asax
     Sub Application_Start(ByVal sender As Object, ByVal e As EventArgs)
         ' Se desencadena al iniciar la aplicación
         Dim lb As New ListBox()
-        Dim lb2 As New ListBox
+        Dim lb2 As New ListBox()
         Application.Contents("numProfes") = 0
         Application.Contents("numAlumns") = 0
         Application.Contents("numUsuarios") = 0
@@ -35,12 +35,7 @@ Public Class Global_asax
 
     Sub Session_End(ByVal sender As Object, ByVal e As EventArgs)
         Application.Lock()
-        Dim listAlumn As New ListBox
-        Dim listProfe As New ListBox
-        listAlumn = Application.Contents("emailAlumnos")
-        listProfe = Application.Contents("emailProfes")
         Application.Contents("numUsuarios") = Application.Contents("numUsuarios") - 1
-
         Application.UnLock()
     End Sub
 

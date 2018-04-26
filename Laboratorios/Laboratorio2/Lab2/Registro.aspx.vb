@@ -6,7 +6,7 @@ Public Class Registro
         Dim result As String
         result = conectar()
         l_conexion.Text = result
-        h_enlace.Visible = False
+        btn_registro.Enabled = False
     End Sub
 
     Protected Sub btn_registro_Click(sender As Object, e As EventArgs) Handles btn_registro.Click
@@ -27,13 +27,24 @@ Public Class Registro
             mensaje = "Para confirmar la cuenta pulsa en el siguiente <a href='http://localhost:54472/Confirmar.aspx?mail=" & email & "&num=" & NumConf & "'> enlace. </a>"
             asunto = "Confirmación de registro"
             mail.enviarEmail(t_email.Text, asunto, mensaje)
-            h_enlace.Visible = True
-            h_enlace.NavigateUrl = "http://localhost:54472/Confirmar.aspx?mail=" & email & "&num=" & NumConf
         End If
 
     End Sub
 
     Protected Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
         cerrarconexion()
+    End Sub
+
+    Protected Sub t_email_TextChanged(sender As Object, e As EventArgs) Handles t_email.TextChanged
+        Dim mat As New Matricula.Matriculas
+
+        Dim result = mat.comprobar(t_email.Text)
+
+        If (result = "SI") Then
+            comp_email.Text = "Email válido"
+            btn_registro.Enabled = True
+        Else
+            comp_email.Text = "No estás matriculado!"
+        End If
     End Sub
 End Class
