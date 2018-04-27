@@ -63,6 +63,26 @@ Namespace My
                 Return CType(Me("Lab2_Matricula_Matriculas"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.WebServiceUrl),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://localhost:52387/WebService1.asmx")>  _
+        Public ReadOnly Property Lab2_localhost_WebService1() As String
+            Get
+                Return CType(Me("Lab2_localhost_WebService1"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.WebServiceUrl),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://serviciowebhads10.azurewebsites.net/WebService1.asmx")>  _
+        Public ReadOnly Property Lab2_AzureWebService_WebService1() As String
+            Get
+                Return CType(Me("Lab2_AzureWebService_WebService1"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

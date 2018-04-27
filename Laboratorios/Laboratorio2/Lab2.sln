@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Lab2", "Lab2\Lab2.vbproj", "{5962CC14-C623-4F6C-8CB5-19D7064E7BB7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DF4E0F6E-4B15-41A2-ACA6-4442A7B03457} = {DF4E0F6E-4B15-41A2-ACA6-4442A7B03457}
+	EndProjectSection
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AccesoBD", "AccesoBD\AccesoBD.vbproj", "{1B2A64D8-28C6-48D4-8C4C-9CFCB47B8340}"
 EndProject

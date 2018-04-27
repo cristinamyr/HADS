@@ -54,10 +54,11 @@
             top: 461px;
         }
         .auto-style11 {
-            top: 778px;
-            left: 70px;
+            top: 701px;
+            left: 54px;
             position: absolute;
             width: 186px;
+            bottom: 427px;
         }
         .auto-style12 {
             width: 215px;
@@ -66,6 +67,27 @@
             left: 1155px;
             top: 28px;
             font-size: large;
+        }
+        .auto-style13 {
+            top: 533px;
+            left: 44px;
+            position: absolute;
+            height: 17px;
+            width: 182px;
+        }
+        .auto-style14 {
+            top: 633px;
+            left: 102px;
+            position: absolute;
+            height: 22px;
+            width: 84px;
+        }
+        .auto-style15 {
+            width: 105px;
+            height: 27px;
+            position: absolute;
+            left: -212px;
+            top: 786px;
         }
     </style>
 </head>
@@ -86,14 +108,16 @@
                             Gestión Web de Tareas-Dedicación</strong></span><strong><br class="auto-style9" />
                             <br class="auto-style9" />
                             </strong><span class="auto-style9"><strong>Profesores</strong><asp:LinkButton ID="l_cerrarsesion" runat="server" CssClass="auto-style12">Cerrar sesión</asp:LinkButton>
-                            </span></div>
+                            </span>
+                            <asp:HyperLink ID="Coordinador" runat="server" CssClass="auto-style15" NavigateUrl="~/Profesores/Vadillo/Coordinador.aspx">Coordinador</asp:HyperLink>
+                        </div>
                     </asp:Panel>
                     <asp:HyperLink ID="h_asignaturas" runat="server" CssClass="auto-style5">Asignaturas</asp:HyperLink>
                     <asp:HyperLink ID="h_tareas" runat="server" CssClass="auto-style6" NavigateUrl="~/Profesores/TareasProfesor.aspx">Tareas</asp:HyperLink>
                     <asp:HyperLink ID="h_grupos" runat="server" CssClass="auto-style7">Grupos</asp:HyperLink>
                     <asp:HyperLink ID="h_Estadisticas" runat="server" CssClass="auto-style10" NavigateUrl="~/Profesores/Estadisticas.aspx">Estadisticas</asp:HyperLink>
-                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Profesores/Vadillo/ImportarXML.aspx" style="top: 559px; left: 93px; position: absolute; height: 22px; width: 103px">Importar v. XMLDocument</asp:HyperLink>
-                    <asp:HyperLink ID="HyperLink2" runat="server" style="top: 673px; left: 104px; position: absolute; height: 22px; width: 84px" NavigateUrl="~/Profesores/Vadillo/ExportarXML.aspx">Exportar</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Profesores/Vadillo/ImportarXML.aspx" CssClass="auto-style13">Importar v. XMLDocument</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Profesores/Vadillo/ExportarXML.aspx" CssClass="auto-style14">Exportar</asp:HyperLink>
                     <asp:HyperLink ID="HyperLink3" runat="server" CssClass="auto-style11" NavigateUrl="~/Profesores/Vadillo/ImportarDataSet.aspx">Importar v. Dataset (Opcional)</asp:HyperLink>
                     <br />
                     <br />
