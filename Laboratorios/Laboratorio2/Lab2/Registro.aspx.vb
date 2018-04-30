@@ -2,11 +2,16 @@
 Public Class Registro
     Inherits System.Web.UI.Page
 
+    Private Shared email As Boolean
+    Private Shared pass As Boolean
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim result As String
         result = conectar()
         l_conexion.Text = result
         btn_registro.Enabled = False
+        email = 0
+        pass = 0
     End Sub
 
     Protected Sub btn_registro_Click(sender As Object, e As EventArgs) Handles btn_registro.Click
@@ -42,9 +47,33 @@ Public Class Registro
 
         If (result = "SI") Then
             comp_email.Text = "Email válido"
-            btn_registro.Enabled = True
+            email = 1
         Else
             comp_email.Text = "No estás matriculado!"
+            email = 0
         End If
+        comprobar()
+    End Sub
+
+    Protected Sub comprobar()
+        If ((email = 1) And (pass = 1)) Then
+            btn_registro.Enabled = True
+        Else
+            btn_registro.Enabled = False
+        End If
+    End Sub
+
+    Protected Sub t_pass_TextChanged(sender As Object, e As EventArgs) Handles t_pass.TextChanged
+        Dim pas As New comp_pass.comprobarPass
+        Dim result = pas.comprobar(t_pass.Text)
+        MsgBox(result)
+        If (result = "VALIDA") Then
+            pass_comp.Text = "Pass válida"
+            pass = 1
+        Else
+            pass_comp.text = "Pass no valida"
+            pass = 0
+        End If
+        comprobar()
     End Sub
 End Class

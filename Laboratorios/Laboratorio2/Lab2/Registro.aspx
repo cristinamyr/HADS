@@ -68,8 +68,9 @@
                         <tr>
                             <td class="auto-style3">Contraseña:</td>
                             <td>
-                                <asp:TextBox ID="t_pass" runat="server" TextMode="Password"></asp:TextBox>
+                                <asp:TextBox ID="t_pass" runat="server" AutoPostBack="True" TextMode="Password"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="req_pass" runat="server" ControlToValidate="t_pass" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                                <asp:Label ID="pass_comp" runat="server" ForeColor="Red"></asp:Label>
                             </td>
                         </tr>
                         <tr>

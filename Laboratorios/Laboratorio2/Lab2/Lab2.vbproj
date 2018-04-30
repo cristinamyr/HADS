@@ -151,6 +151,11 @@
       <LastGenOutput>Reference.vb</LastGenOutput>
     </Content>
     <None Include="Web References\AzureWebService\WebService1.wsdl" />
+    <None Include="Web References\comp_pass\comprobarPass.wsdl" />
+    <Content Include="Web References\comp_pass\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </Content>
     <None Include="Web References\localhost\WebService1.disco" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -315,6 +320,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\comp_pass\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\localhost\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -404,6 +414,17 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>Lab2_AzureWebService_WebService1</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://lab1-2223.000webhostapp.com/Lab7/comprobarPass.php%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\comp_pass\</RelPath>
+      <UpdateFromURL>https://lab1-2223.000webhostapp.com/Lab7/comprobarPass.php%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Lab2_comp_pass_comprobarPass</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>

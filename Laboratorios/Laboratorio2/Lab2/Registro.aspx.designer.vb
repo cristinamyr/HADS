@@ -131,6 +131,15 @@ Partial Public Class Registro
     Protected WithEvents req_pass As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
+    '''Control pass_comp.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents pass_comp As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''Control t_rpass.
     '''</summary>
     '''<remarks>
