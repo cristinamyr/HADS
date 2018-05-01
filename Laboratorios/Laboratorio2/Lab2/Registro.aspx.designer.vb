@@ -95,15 +95,6 @@ Partial Public Class Registro
     Protected WithEvents req_email As Global.System.Web.UI.WebControls.RequiredFieldValidator
     
     '''<summary>
-    '''Control reg_email.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents reg_email As Global.System.Web.UI.WebControls.RegularExpressionValidator
-    
-    '''<summary>
     '''Control comp_email.
     '''</summary>
     '''<remarks>
@@ -111,6 +102,15 @@ Partial Public Class Registro
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents comp_email As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Control reg_email.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents reg_email As Global.System.Web.UI.WebControls.RegularExpressionValidator
     
     '''<summary>
     '''Control t_pass.

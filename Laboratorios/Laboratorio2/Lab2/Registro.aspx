@@ -61,14 +61,14 @@
                             <td>
                                 <asp:TextBox ID="t_email" runat="server" AutoPostBack="True"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="req_email" runat="server" ControlToValidate="t_email" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="reg_email" runat="server" ControlToValidate="t_email" ErrorMessage="Formato incorrecto" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                                 <asp:Label ID="comp_email" runat="server" ForeColor="Red"></asp:Label>
+                                <asp:RegularExpressionValidator ID="reg_email" runat="server" ControlToValidate="t_email" ErrorMessage="Formato incorrecto" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                             </td>
                         </tr>
                         <tr>
                             <td class="auto-style3">Contraseña:</td>
                             <td>
-                                <asp:TextBox ID="t_pass" runat="server" AutoPostBack="True" TextMode="Password"></asp:TextBox>
+                                <asp:TextBox ID="t_pass" runat="server" AutoPostBack="True" ></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="req_pass" runat="server" ControlToValidate="t_pass" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                                 <asp:Label ID="pass_comp" runat="server" ForeColor="Red"></asp:Label>
                             </td>
