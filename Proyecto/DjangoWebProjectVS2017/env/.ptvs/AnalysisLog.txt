@@ -4743,3 +4743,7 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\Extens
 2018-05-02T11:46:42: Saving group "e:\hads\teoria\djangowebprojectvs2017\djangowebprojectvs2017\env\lib\site-packages\pytz"
 2018-05-02T11:46:43: End of group "e:\hads\teoria\djangowebprojectvs2017\djangowebprojectvs2017\env\lib\site-packages\pytz"
 2018-05-02T11:46:47: Deleting 0 files
+
+2018-05-06T17:10:37: Start analysis
+2018-05-06T17:10:37: IncludeModulesFromModulePath = win32com
+2018-05-06T17:10:40: Deleting 0 files

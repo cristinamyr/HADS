@@ -2,7 +2,7 @@ c:\program files (x86)\microsoft visual studio\shared\python36_64|stdlib|
 c:\program files (x86)\microsoft visual studio\shared\python36_64\dlls|stdlib|
 c:\program files (x86)\microsoft visual studio\shared\python36_64\lib|stdlib|
 c:\program files (x86)\microsoft visual studio\shared\python36_64\scripts|stdlib|
-e:\hads\teoria\djangowebprojectvs2017\djangowebprojectvs2017\env|stdlib|
-e:\hads\teoria\djangowebprojectvs2017\djangowebprojectvs2017\env\lib|stdlib|
-e:\hads\teoria\djangowebprojectvs2017\djangowebprojectvs2017\env\scripts|stdlib|
-e:\hads\teoria\djangowebprojectvs2017\djangowebprojectvs2017\env\lib\site-packages||
+c:\users\cristinita\documents\github\hads\proyecto\djangowebprojectvs2017\env|stdlib|
+c:\users\cristinita\documents\github\hads\proyecto\djangowebprojectvs2017\env\lib|stdlib|
+c:\users\cristinita\documents\github\hads\proyecto\djangowebprojectvs2017\env\scripts|stdlib|
+c:\users\cristinita\documents\github\hads\proyecto\djangowebprojectvs2017\env\lib\site-packages||
