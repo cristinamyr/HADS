@@ -3,7 +3,7 @@ Definition of forms.
 """
 
 from django import forms
-from app.models import Question,Choice,User
+from app.models import Question,Choice,User,Pregunta,Opcion
 from django.contrib.auth.forms import AuthenticationForm
 from django.utils.translation import ugettext_lazy as _
 
@@ -18,6 +18,18 @@ class ChoiceForm(forms.ModelForm):
         class Meta:
             model = Choice
             fields = ('choice_text',)
+
+class PreguntaForm(forms.ModelForm):
+
+        class Meta:
+            model = Pregunta
+            fields = ('enunciado',)
+
+class OpcionForm(forms.ModelForm):
+
+        class Meta:
+            model = Opcion
+            fields = ('opcion','votos',)
 
 class UserForm(forms.ModelForm):
 

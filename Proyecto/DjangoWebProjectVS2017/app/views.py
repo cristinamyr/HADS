@@ -101,6 +101,18 @@ def question_new(request):
             form = QuestionForm()
         return render(request, 'polls/question_new.html', {'form': form})
 
+def pregunta_nueva(request):
+    if request.method == "POST":
+        form = PreguntaForm(request.POST)
+        if form.is_valid():
+            pregunta = form.save(commit=False)
+            question.save()
+            #return redirect('detail', pk=question_id)
+            #return render(request, 'polls/index.html', {'title':'Respuestas posibles','question': question})
+    else:
+        form = PreguntaForm()
+    return render(request, 'quiz/nueva_pregunta.html', {'form': form})
+
 def choice_add(request, question_id):
         question = Question.objects.get(id = question_id)
         if request.method =='POST':

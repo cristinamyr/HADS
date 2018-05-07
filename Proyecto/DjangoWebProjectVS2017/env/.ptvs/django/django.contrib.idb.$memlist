@@ -1,13 +1,13 @@
-auth
 messages
-admindocs
+humanize
+syndication
 sites
 sitemaps
 admin
 staticfiles
-syndication
+auth
 flatpages
-humanize
+admindocs
 contenttypes
 redirects
 gis
