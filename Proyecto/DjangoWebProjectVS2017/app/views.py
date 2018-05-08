@@ -8,7 +8,7 @@ from django.template import RequestContext
 from datetime import datetime
 from django.http.response import HttpResponse, Http404
 from django.http import HttpResponseRedirect, HttpResponse
-from .models import Question,Choice,User
+from .models import Question,Choice,User,Pregunta
 from django.template import loader
 from django.core.urlresolvers import reverse
 from app.forms import QuestionForm, ChoiceForm,UserForm
@@ -62,9 +62,22 @@ def index(request):
               }
     return render(request, 'polls/index.html', context)
 
+def index_pregunta(request):
+    latest_question_list = Pregunta.objects.order_by('-enunciado')
+    template = loader.get_template('quiz/index.html')
+    context = {
+                'title':'Lista de preguntas del quiz',
+                'latest_question_list' : latest_question_list,
+              }
+    return render(request, 'quiz/index.html', context)
+
 def detail(request, question_id):
      question = get_object_or_404(Question, pk=question_id)
      return render(request, 'polls/detail.html', {'title':'Respuestas asociadas a la pregunta:','question': question})
+
+def detalles(request, question_id):
+     pregunta = get_object_or_404(Pregunta, pk=pregunta_id)
+     return render(request, 'quiz/detail.html', {'title':'Respuestas asociadas a la pregunta:','pregunta': question})
 
 def results(request, question_id):
     question = get_object_or_404(Question, pk=question_id)

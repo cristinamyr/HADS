@@ -19,13 +19,17 @@ class User(models.Model):
     email = models.CharField(max_length=200)
     nombre = models.CharField(max_length=200)
 
+
+
+
 class Pregunta(models.Model):
     enunciado = models.CharField(max_length=200)
     numOpc = models.IntegerField(default=0)
-    opc_correcta = models.IntegerField(default=0)
     tema = models.CharField(max_length=200)
 
 class Opcion(models.Model):
     pregunta = models.ForeignKey(Pregunta)
     opcion = models.CharField(max_length=200)
+    correcta = models.IntegerField(default=0)
     votos = models.IntegerField(default=0)
+

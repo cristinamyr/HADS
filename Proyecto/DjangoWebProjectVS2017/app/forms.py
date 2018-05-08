@@ -23,13 +23,13 @@ class PreguntaForm(forms.ModelForm):
 
         class Meta:
             model = Pregunta
-            fields = ('enunciado',)
+            fields = ('enunciado','numOpc','tema',)
 
 class OpcionForm(forms.ModelForm):
 
         class Meta:
             model = Opcion
-            fields = ('opcion','votos',)
+            fields = ('opcion','votos','correcta',)
 
 class UserForm(forms.ModelForm):
 
