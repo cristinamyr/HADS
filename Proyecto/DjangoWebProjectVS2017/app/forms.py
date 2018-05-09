@@ -29,7 +29,7 @@ class OpcionForm(forms.ModelForm):
 
         class Meta:
             model = Opcion
-            fields = ('opcion','votos','correcta',)
+            fields = ('opcion','correcta',)
 
 class UserForm(forms.ModelForm):
 

@@ -1,0 +1,26 @@
+﻿{% extends "app/layout.html" %}
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<h3>{{pregunta.opcion_set.all.count}}</h3>
+<h3>{{pregunta.numOpc}} </h3>
+<h1>Insertar una opción</h1>
+
+{}
+
+{% if {{pregunta.opcion_set.all.count}} < {{pregunta.numOpc}} %}
+    <a href="{% url 'pregunta_nueva' %}"><h2>Insertar pregunta nueva</h2></a> 
+    <form method="POST" class="post-form">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-default">Save</button>
+     </form>
+{% else %}
+    <h2>Has añadido ya el número máximo de opciones para la pregunta seleccionada.</h2>
+{% endif %}
+
+        
+<a href="{% url 'index_pregunta' %}">Ver preguntas</a> 
+
+{% endblock %}

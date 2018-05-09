@@ -8,10 +8,10 @@ from django.template import RequestContext
 from datetime import datetime
 from django.http.response import HttpResponse, Http404
 from django.http import HttpResponseRedirect, HttpResponse
-from .models import Question,Choice,User,Pregunta
+from .models import Question,Choice,User,Pregunta,Opcion
 from django.template import loader
 from django.core.urlresolvers import reverse
-from app.forms import QuestionForm, ChoiceForm,UserForm
+from app.forms import QuestionForm, ChoiceForm,UserForm,PreguntaForm,OpcionForm
 from django.shortcuts import redirect
 import json
 
@@ -75,9 +75,9 @@ def detail(request, question_id):
      question = get_object_or_404(Question, pk=question_id)
      return render(request, 'polls/detail.html', {'title':'Respuestas asociadas a la pregunta:','question': question})
 
-def detalles(request, question_id):
+def detalles(request, pregunta_id):
      pregunta = get_object_or_404(Pregunta, pk=pregunta_id)
-     return render(request, 'quiz/detail.html', {'title':'Respuestas asociadas a la pregunta:','pregunta': question})
+     return render(request, 'quiz/detail.html', {'title':'Respuestas asociadas a la pregunta:','pregunta': pregunta})
 
 def results(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
@@ -119,7 +119,7 @@ def pregunta_nueva(request):
         form = PreguntaForm(request.POST)
         if form.is_valid():
             pregunta = form.save(commit=False)
-            question.save()
+            pregunta.save()
             #return redirect('detail', pk=question_id)
             #return render(request, 'polls/index.html', {'title':'Respuestas posibles','question': question})
     else:
@@ -141,6 +141,22 @@ def choice_add(request, question_id):
         #return render_to_response ('choice_new.html', {'form': form, 'poll_id': poll_id,}, context_instance = RequestContext(request),)
         return render(request, 'polls/choice_new.html', {'title':'Pregunta:'+ question.question_text,'form': form})
 
+def anadir_opc(request, pregunta_id):
+        question = Pregunta.objects.get(id = pregunta_id)
+        if request.method =='POST':
+            cuantas = pregunta.opcion_set.all.count
+            form = OpcionForm(request.POST)
+            if form.is_valid():
+                opcion = form.save(commit = False)
+                opcion.pregunta = question
+                opcion.votos = 0
+                opcion.save()         
+                #form.save()
+        else: 
+            form = OpcionForm()
+        #return render_to_response ('choice_new.html', {'form': form, 'poll_id': poll_id,}, context_instance = RequestContext(request),)
+        return render(request, 'quiz/nueva_opcion.html', {'title':'Pregunta:'+ question.enunciado,'form': form, 'pregunta':question})
+
 def chart(request, question_id):
     q=Question.objects.get(id = question_id)
     qs = Choice.objects.filter(question=q)
@@ -152,6 +168,18 @@ def chart(request, question_id):
     }
 
     return render(request, 'polls/grafico.html', context)
+
+def grafico(request, pregunta_id):
+    q=Pregunta.objects.get(id = pregunta_id)
+    qs = Opcion.objects.filter(pregunta=q)
+    dates = [obj.opcion for obj in qs]
+    counts = [obj.votos for obj in qs]
+    context = {
+        'dates': json.dumps(dates),
+        'counts': json.dumps(counts),
+    }
+
+    return render(request, 'quiz/grafico.html', context)
 
 def user_new(request):
         if request.method == "POST":

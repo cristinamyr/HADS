@@ -77,7 +77,9 @@
     <Content Include="app\templates\polls\question_new.html" />
     <Content Include="app\templates\polls\results.html" />
     <None Include="HADS10-Django - Web Deploy.pubxml" />
+    <Content Include="app\templates\quiz\nueva_opcion.html" />
     <Content Include="app\templates\quiz\detail.html" />
+    <Content Include="app\templates\quiz\grafico.html" />
     <Content Include="app\templates\quiz\index.html" />
     <Content Include="app\templates\quiz\nueva_pregunta.html" />
     <Content Include="requirements.txt" />
