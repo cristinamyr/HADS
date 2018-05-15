@@ -21,7 +21,7 @@ class User(models.Model):
 
 class Pregunta(models.Model):
     enunciado = models.CharField(max_length=200)
-    numOpc = models.IntegerField(default=0)
+    numOpc = models.IntegerField(default=2)
     tema = models.CharField(max_length=200)
 
 class Opcion(models.Model):

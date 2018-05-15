@@ -4,6 +4,9 @@
 <h2>{{ title }}.</h2>
 <h3>{{ message }}</h3>
 
+
+{% if accept_message %}<p><strong style="color:green;"><b>{{ accept_message }}</b></strong></p>{% endif %}
+
 {% if latest_question_list %}
     <ul>
     {% for pregunta in latest_question_list %}

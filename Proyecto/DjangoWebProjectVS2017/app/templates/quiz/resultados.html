@@ -1,0 +1,20 @@
+﻿{% extends "app/layout.html" %}
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<h1>{{ pregunta.enunciado }}</h1>
+
+{{mensaje}}
+
+<ul>
+{% for opcion in pregunta.opcion_set.all %}
+    <li>{{ opcion.opcion}} -- {{ opcion.votos }} vote{{ opcion.votos|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'grafico' pregunta.id %}"> Ver gráficas<br />
+<a href="{% url 'index_pregunta' %}">Contestar otra pregunta?</a>
+
+{% endblock %}

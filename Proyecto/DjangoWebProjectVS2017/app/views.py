@@ -83,6 +83,15 @@ def results(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     return render(request, 'polls/results.html', {'title':'Resultados de la pregunta:','question': question})
 
+def resultados(request, pregunta_id,answer_id):
+    question = get_object_or_404(Pregunta, pk=pregunta_id)
+    respuesta = get_object_or_404(Opcion, pk=answer_id)
+    if respuesta.correcta == 1:
+        mensaje = "Has respondido correctamente la pregunta"
+    else:
+        mensaje = "No has respondido correctamente la pregunta"
+    return render(request, 'quiz/resultados.html', {'title':'Resultados de la pregunta:','pregunta': question, 'mensaje' : mensaje})
+
 def vote(request, question_id):
     p = get_object_or_404(Question, pk=question_id)
     try:
@@ -90,7 +99,7 @@ def vote(request, question_id):
     except (KeyError, Choice.DoesNotExist):
         # Vuelve a mostrar el form.
         return render(request, 'polls/detail.html', {
-            'question': p,
+            'pregunta': p,
             'error_message': "ERROR: No se ha seleccionado una opcion",
         })
     else:
@@ -100,6 +109,22 @@ def vote(request, question_id):
         # exitosamente el POST de un form. Esto evita que los datos se
         # puedan postear dos veces si el usuario vuelve atras en su browser.
         return HttpResponseRedirect(reverse('results', args=(p.id,)))
+
+def votar(request, pregunta_id):
+    p = get_object_or_404(Pregunta, pk=pregunta_id)
+    try:
+        selected_choice = p.opcion_set.get(pk=request.POST['choice'])
+    except (KeyError, Opcion.DoesNotExist):
+        # Vuelve a mostrar el form.
+        return render(request, 'quiz/detail.html', {
+            'pregunta': p,
+            'error_message': "ERROR: No se ha seleccionado una opcion",
+        })
+    else:
+        selected_choice.votos += 1
+        selected_choice.save()
+        return HttpResponseRedirect(reverse('resultados', args=(pregunta_id,selected_choice.id,)))
+
 
 def question_new(request):
         if request.method == "POST":
@@ -119,9 +144,18 @@ def pregunta_nueva(request):
         form = PreguntaForm(request.POST)
         if form.is_valid():
             pregunta = form.save(commit=False)
-            pregunta.save()
-            #return redirect('detail', pk=question_id)
-            #return render(request, 'polls/index.html', {'title':'Respuestas posibles','question': question})
+            if(pregunta.numOpc<2 or pregunta.numOpc>4):
+                 return render(request, 'quiz/nueva_pregunta.html', {'form': form,'error_message': "ERROR: El número de opciones establecido no es correcto. Debe ser un valor entre 2 y 4"})
+            else:
+                pregunta.save()
+                latest_question_list = Pregunta.objects.order_by('-enunciado')
+                template = loader.get_template('quiz/index.html')
+                context = {
+                    'title':'Lista de preguntas del quiz',
+                    'latest_question_list' : latest_question_list,
+                    'accept_message': "Pregunta añadida correctamente!!!"
+                  }
+                return render(request, 'quiz/index.html', context)
     else:
         form = PreguntaForm()
     return render(request, 'quiz/nueva_pregunta.html', {'form': form})
@@ -142,20 +176,22 @@ def choice_add(request, question_id):
         return render(request, 'polls/choice_new.html', {'title':'Pregunta:'+ question.question_text,'form': form})
 
 def anadir_opc(request, pregunta_id):
-        question = Pregunta.objects.get(id = pregunta_id)
+        pregunta = Pregunta.objects.get(id = pregunta_id)
         if request.method =='POST':
-            cuantas = pregunta.opcion_set.all.count
             form = OpcionForm(request.POST)
             if form.is_valid():
                 opcion = form.save(commit = False)
-                opcion.pregunta = question
+                opcion.pregunta = pregunta
                 opcion.votos = 0
-                opcion.save()         
+                opcion.save() 
+                form = OpcionForm()
+                return render(request, 'quiz/nueva_opcion.html', {'title':'Pregunta:'+ pregunta.enunciado,'form': form,'pregunta': pregunta,'max': pregunta.opcion_set.all})
+
                 #form.save()
         else: 
             form = OpcionForm()
         #return render_to_response ('choice_new.html', {'form': form, 'poll_id': poll_id,}, context_instance = RequestContext(request),)
-        return render(request, 'quiz/nueva_opcion.html', {'title':'Pregunta:'+ question.enunciado,'form': form, 'pregunta':question})
+        return render(request, 'quiz/nueva_opcion.html', {'title':'Pregunta:'+ pregunta.enunciado,'form': form,'pregunta': pregunta,'max': pregunta.opcion_set.all})
 
 def chart(request, question_id):
     q=Question.objects.get(id = question_id)

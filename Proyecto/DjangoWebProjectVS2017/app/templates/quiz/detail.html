@@ -6,17 +6,17 @@
 
 <h3>Pregunta: {{ pregunta.enunciado }}</h3>
 {% if error_message %}<p><strong style="color:red;"><b>{{ error_message }}</b></strong></p>{% endif %}
-<form action="{% url 'vote' pregunta.id %}" method="post">
+<form action="{% url 'votar' pregunta.id %}" method="post">
 {% csrf_token %}
 {% for opcion in pregunta.opcion_set.all %}
     <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ opcion.id }}" />
-    <label for="choice{{ forloop.counter }}">{{ opcion.opcion }}</label><br />
+    <label for="choice{{ forloop.counter }}">{{ opcion.opcion }}</label>{% if request.user.is_authenticated %}{%if opcion.correcta == 1 %} (Respuesta correcta, {{opcion.votos}} veces seleccionada){%else%} ({{opcion.votos}}veces seleccionada){%endif%}{%endif%}<br />
 {% endfor %}
 {% if request.user.is_authenticated %}
     <a href="{% url 'anadir_opc' pregunta.id %}"><h3>Insertar Opciones</h3></a> 
     <a href="{% url 'grafico' pregunta.id %}"> <h3>Ver resultado de la votacion</h3> </a><br />
 {% else %}
-    <input type="submit" value="Vote" />
+    <input type="submit" value="Votar" />
 {% endif %}
 
 </form>

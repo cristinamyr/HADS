@@ -82,6 +82,10 @@
     <Content Include="app\templates\quiz\grafico.html" />
     <Content Include="app\templates\quiz\index.html" />
     <Content Include="app\templates\quiz\nueva_pregunta.html" />
+    <None Include="HADS10-Django - FTP.pubxml" />
+    <None Include="djangohads10 - FTP.pubxml" />
+    <None Include="djangohads10 - Web Deploy.pubxml" />
+    <Content Include="app\templates\quiz\resultados.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
