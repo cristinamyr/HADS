@@ -14,6 +14,8 @@ from django.core.urlresolvers import reverse
 from app.forms import QuestionForm, ChoiceForm,UserForm,PreguntaForm,OpcionForm
 from django.shortcuts import redirect
 import json
+from django.db import connection
+
 
 
 def home(request):
@@ -63,11 +65,14 @@ def index(request):
     return render(request, 'polls/index.html', context)
 
 def index_pregunta(request):
+    #row = Pregunta.object.all()
     latest_question_list = Pregunta.objects.order_by('-enunciado')
+    row = Pregunta.objects.values('tema').distinct()
     template = loader.get_template('quiz/index.html')
     context = {
                 'title':'Lista de preguntas del quiz',
                 'latest_question_list' : latest_question_list,
+                'temas':row
               }
     return render(request, 'quiz/index.html', context)
 
@@ -77,7 +82,7 @@ def detail(request, question_id):
 
 def detalles(request, pregunta_id):
      pregunta = get_object_or_404(Pregunta, pk=pregunta_id)
-     return render(request, 'quiz/detail.html', {'title':'Respuestas asociadas a la pregunta:','pregunta': pregunta})
+     return render(request, 'quiz/detail.html', {'title':'Respuestas asociadas a la pregunta:','pregunta': pregunta,})
 
 def results(request, question_id):
     question = get_object_or_404(Question, pk=question_id)

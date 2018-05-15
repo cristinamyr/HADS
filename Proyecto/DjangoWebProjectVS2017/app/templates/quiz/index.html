@@ -1,24 +1,40 @@
 ﻿{% extends "app/layout.html" %}
 {% block content %}
 
-<h2>{{ title }}.</h2>
-<h3>{{ message }}</h3>
+
+{% for p in temas %}
+   </br>
+{% endfor %}
 
 
 {% if accept_message %}<p><strong style="color:green;"><b>{{ accept_message }}</b></strong></p>{% endif %}
 
-{% if latest_question_list %}
-    <ul>
-    {% for pregunta in latest_question_list %}
-        <li><a href="{% url 'detalles' pregunta.id %}">{{ pregunta.enunciado }}</a></li>
-    {% endfor %}
-    </ul>
-  
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+
 {% if request.user.is_authenticated %}
-<a href="{% url 'pregunta_nueva' %}"><h2>Insertar pregunta nueva</h2></a> 
+    <h2>{{ title }}.</h2>
+    <h3>{{ message }}</h3>
+
+    {% if latest_question_list %}
+        <ul>
+        {% for pregunta in latest_question_list %}
+            <li><a href="{% url 'detalles' pregunta.id %}">{{ pregunta.enunciado }}</a></li>
+        {% endfor %}
+        </ul>
+  
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+    <a href="{% url 'pregunta_nueva' %}"><h2>Insertar pregunta nueva</h2></a> 
+{% else %}
+    <h3> Elige el tema de las preguntas que quieres responder:</h3>
+    <form action=" " method="post">
+        <select name="temas">
+            {% for p in temas%}
+                <option value="{{p}}">{{p}}</option>
+            {% endfor %}
+        </select>
+    </form>
+
 {% endif %}
 
 {% endblock %}
