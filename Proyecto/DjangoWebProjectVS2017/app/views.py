@@ -82,7 +82,7 @@ def index_pregunta(request):
     else:
         latest_question_list = Pregunta.objects.order_by('-enunciado')
         row = Pregunta.objects.values('tema').distinct()
-        preguntas = Pregunta.objects.filter(tema__contains='Prueba')
+        preguntas = Pregunta.objects.filter(tema__contains=temaElegido)
         template = loader.get_template('quiz/index.html')
         context = {
                 'title':'Lista de preguntas del quiz con el tema ',

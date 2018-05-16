@@ -26,11 +26,12 @@
     <a href="{% url 'pregunta_nueva' %}"><h2>Insertar pregunta nueva</h2></a> 
 {% else %}
     <h3> Elige el tema de las preguntas que quieres responder:</h3>
+        {{temas}}
     <form action="index" method="post">
         {% csrf_token %}
         <select name="temas">
             {% for p in temas%}
-                <option value="{{p}}">{{p}}</option>
+                <option value="{{p.tema}}">{{p.tema}}</option>
             {% endfor %}
         </select>
         <input type="submit" value="Buscar" />
