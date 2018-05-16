@@ -2,9 +2,9 @@
 {% block content %}
 
 
-{% for p in temas %}
-   </br>
-{% endfor %}
+{% if tema %}
+    {{tema}}
+{% endif %}
 
 
 {% if accept_message %}<p><strong style="color:green;"><b>{{ accept_message }}</b></strong></p>{% endif %}
@@ -20,21 +20,34 @@
             <li><a href="{% url 'detalles' pregunta.id %}">{{ pregunta.enunciado }}</a></li>
         {% endfor %}
         </ul>
-  
     {% else %}
-        <p>No polls are available.</p>
+        <p>No hay preguntas disponibles.</p>
     {% endif %}
     <a href="{% url 'pregunta_nueva' %}"><h2>Insertar pregunta nueva</h2></a> 
 {% else %}
     <h3> Elige el tema de las preguntas que quieres responder:</h3>
-    <form action=" " method="post">
+    <form action="index" method="post">
+        {% csrf_token %}
         <select name="temas">
             {% for p in temas%}
                 <option value="{{p}}">{{p}}</option>
             {% endfor %}
         </select>
+        <input type="submit" value="Buscar" />
     </form>
-
+    {% if valido %}      
+        <h2>{{ title }}{{tema}}.</h2>
+        <h3>{{ message }}</h3>
+        {% if preguntas %}
+            <ul>
+            {% for pregunta in preguntas %}
+                <li><a href="{% url 'detalles' pregunta.id %}">{{ pregunta.enunciado }}</a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No hay preguntas disponibles.</p>
+        {% endif %}
+    {% endif %}
 {% endif %}
 
 {% endblock %}
