@@ -1,25 +1,9 @@
 ﻿{% extends "app/layout.html" %}
 {% block content %}
 
-{% block javascript %}
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
-        function obtenerPreguntas() {
-            console.log("Hola");
-            new Ajax.Request('quiz/index_pregunta', { 
-                method: 'POST',
-                parameters: {'tema':$('#temas')},
-                onSuccess: function(x) {
-                    var e = $('id_color')
-                    if(transport.responseText)
-                        e.update(transport.responseText)
-                }
-            }); // end new Ajax.Request
-        }
-      </script>
-    {% endblock %}
+
 
 {% if accept_message %}<p><strong style="color:green;"><b>{{ accept_message }}</b></strong></p>{% endif %}
-
 
 {% if request.user.is_authenticated %}
     <h2>{{ title }}.</h2>
@@ -37,13 +21,10 @@
     <a href="{% url 'pregunta_nueva' %}"><h2>Insertar pregunta nueva</h2></a> 
 {% else %}
     
-
-
-    <p id="identificador" name="identificador">aa</p>
     <h3> Elige el tema de las preguntas que quieres responder:</h3>
     <form method="post">
         {% csrf_token %}
-        <select name="temas" onchange="obtenerPreguntas()">
+        <select name="temas" id="temas" >
             {% for p in temas%}
                 <option value="{{p.tema}}">{{p.tema}}</option>
             {% endfor %}

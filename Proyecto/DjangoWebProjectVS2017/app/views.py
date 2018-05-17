@@ -16,6 +16,7 @@ from django.shortcuts import redirect
 import json
 from django.db import connection
 from django.db.models import F
+from django.http import JsonResponse
 
 
 
@@ -93,6 +94,14 @@ def index_pregunta(request):
                 'tema':temaElegido
               }
         return render(request, 'quiz/index.html', context)
+
+def validar_ajax(request):
+    answer = request.GET['preguntaSeleccionada']
+    respuesta = get_object_or_404(Opcion, pk=request.GET['preguntaSeleccionada'])
+    if respuesta.correcta == 0:
+        return HttpResponse("Has respondido mal")
+    else:
+        return HttpResponse("Has respondido bien")
 
 def detail(request, question_id):
      question = get_object_or_404(Question, pk=question_id)
@@ -208,7 +217,7 @@ def anadir_opc(request, pregunta_id):
                 opcion.votos = 0
                 opcion.save() 
                 form = OpcionForm()
-                return render(request, 'quiz/nueva_opcion.html', {'title':'Pregunta:'+ pregunta.enunciado,'form': form,'pregunta': pregunta,'max': pregunta.opcion_set.all})
+                return render(request, 'quiz/nueva_opcion.html', {'anadida':"Respuesta añadida correctamente",'title':'Pregunta:'+ pregunta.enunciado,'form': form,'pregunta': pregunta,'max': pregunta.opcion_set.all})
 
                 #form.save()
         else: 

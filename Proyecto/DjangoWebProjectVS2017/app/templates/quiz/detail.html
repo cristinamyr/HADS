@@ -4,6 +4,9 @@
 <h2>{{ title }}.</h2>
 <h3>{{ message }}</h3>
 
+
+
+<p name="resultado" id="resultado"></p>
 <h3>Pregunta: {{ pregunta.enunciado }}</h3>
 {% if error_message %}<p><strong style="color:red;"><b>{{ error_message }}</b></strong></p>{% endif %}
 <form action="{% url 'votar' pregunta.id %}" method="post">
@@ -16,8 +19,24 @@
     <a href="{% url 'anadir_opc' pregunta.id %}"><h3>Insertar Opciones</h3></a> 
     <a href="{% url 'grafico' pregunta.id %}"> <h3>Ver resultado de la votacion</h3> </a><br />
 {% else %}
+    <input type="button" name="obtenerResultado" id="obtenerResultado" value="Comprobar respuesta" />
     <input type="submit" value="Votar" />
 {% endif %}
 
 </form>
+
+{% block javascript %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $("#obtenerResultado").click(function () {
+            var valor = $('input:radio[name=choice]:checked').val();
+            $.get('/quiz/validar_ajax/', { preguntaSeleccionada: valor }, function (data) {
+                $("#resultado").append("");
+                $("#resultado").append(data);
+            });
+        });
+          
+      </script>
+{% endblock %}
+
 {% endblock %}
